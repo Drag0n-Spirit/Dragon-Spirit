@@ -1,3 +1,12 @@
-﻿  pch.cpp
-  Dragon Spirit.cpp
-  Dragon Spirit.vcxproj -> C:\Users\19aht01\Documents\GitHub\Dragon-Spirit\Dragon Spirit\Debug\Dragon Spirit.exe
+﻿  Dragon Spirit.cpp
+c:\users\20af02\documents\github\dragon-spirit\dragon spirit\dragon spirit\dragon spirit.cpp(35): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\20af02\documents\github\dragon-spirit\dragon spirit\dragon spirit\dragon spirit.cpp(37): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+  Dragon Spirit.vcxproj -> C:\Users\20af02\Documents\GitHub\Dragon-Spirit\Dragon Spirit\Debug\Dragon Spirit.exe
