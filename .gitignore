@@ -1,6 +1,6 @@
-Dragon\ Spirit/.vs/
-Dragon\ Spirit/Debug/
-Dragon\ Spirit/Dragon\ Spirit/Debug/
+Centipede/.vs/
+Centipede/Debug/
+Centipede/Centipede/Debug/
 *.filters
 *.user
 *.ipch
@@ -8,14 +8,14 @@ Dragon\ Spirit/Dragon\ Spirit/Debug/
 targetserver.*
 
 
-Dragon\ Spirit/.vs/Dragon\ Spirit/v15/.suo
-Dragon\ Spirit/.vs/Dragon\ Spirit/v15/Browse.VC.db
+Centipede/.vs/Centipede/v15/.suo
+Centipede/.vs/Centipede/v15/Browse.VC.db
 *.db
-Dragon\ Spirit/.vs/Dragon\ Spirit/v15/.suo
+Centipede/.vs/Centipede/v15/.suo
 *.db
 *.db
-Dragon\ Spirit/Debug/Dragon\ Spirit.exe
-Dragon\ Spirit/Debug/Dragon\ Spirit.exe
+Centipede/Debug/Centipede.exe
+Centipede/Debug/Centipede.exe
 *.ilk
 *.pdb
 *.idb
@@ -24,7 +24,7 @@ Dragon\ Spirit/Debug/Dragon\ Spirit.exe
 *.obj
 *.tlog
 *.db
-Dragon\ Spirit/.vs/Dragon\ Spirit/v15/.suo
+Centipede/.vs/Centipede/v15/.suo
 *.log
 *.tlog
 *.pdb
@@ -36,29 +36,6 @@ Dragon\ Spirit/.vs/Dragon\ Spirit/v15/.suo
 *.tlog
 *.tlog
 *.obj
-<<<<<<< HEAD
 Centipede/.vs/Centipede/v15/.suo
 Centipede/.vs/Centipede/v15/Browse.VC.db
 Dragon Spirit/.vs/Dragon Spirit/v15/Browse.VC.opendb
-=======
-Dragon\ Spirit/.vs/Dragon\ Spirit/v15/.suo
-Dragon\ Spirit/.vs/Dragon\ Spirit/v15/Browse.VC.db
-Dragon Spirit/.vs/Dragon Spirit/v15/.suo
-Dragon Spirit/.vs/Dragon Spirit/v15/.suo
-Dragon Spirit/.vs/Dragon Spirit/v15/.suo
-*.exe
-*.ilk
-*.pdb
-*.log
-*.obj
-*.pch
-*.tlog
-*.tlog
-*.tlog
-*.lastbuildstate
-*.tlog
-*.tlog
-*.obj
-*.idb
-*.pdb
->>>>>>> 3ae781312a78defa90faa04f2695ab38b6881eeb
