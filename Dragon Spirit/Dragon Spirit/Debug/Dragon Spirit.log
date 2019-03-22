@@ -1,18 +1,4 @@
 ﻿  Dragon Spirit.cpp
-<<<<<<< HEAD
   Game.cpp
   Generating Code...
   Dragon Spirit.vcxproj -> C:\Users\20ndh01\Documents\GitHub\Dragon-Spirit\Dragon Spirit\Debug\Dragon Spirit.exe
-=======
-c:\users\20af02\documents\github\dragon-spirit\dragon spirit\dragon spirit\dragon spirit.cpp(35): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-c:\users\20af02\documents\github\dragon-spirit\dragon spirit\dragon spirit\dragon spirit.cpp(37): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-  Dragon Spirit.vcxproj -> C:\Users\20af02\Documents\GitHub\Dragon-Spirit\Dragon Spirit\Debug\Dragon Spirit.exe
->>>>>>> 3ae781312a78defa90faa04f2695ab38b6881eeb
