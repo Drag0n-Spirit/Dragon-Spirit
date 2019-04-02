@@ -18,9 +18,12 @@ public:
 
 	int getHits();
 	int getFire();
-	void fire();
+	void shoot();
+
+	void die();
 
 private:
-	int hits, heads, fire, hitTimer, fireType, powerups[] = { 0, 0, 0, 0, 0 };
+	int hits, heads, fire, hitTimer = 0, shotTimer = 0,
+		fireType, powerups[5] = { 0, 0, 0, 0, 0 };
 };
 
