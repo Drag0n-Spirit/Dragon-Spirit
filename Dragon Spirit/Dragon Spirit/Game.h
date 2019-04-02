@@ -22,15 +22,16 @@ public:
 	//void spawnProjectile(GameObject * source //the object that called the function);
 	void checkCollisions();
 private:
+	enum GameState {startScreen, running, bossFight, pause, animation, 
+		gameOver, endScreen};
 	sf::RenderWindow const * window;
 	sf::View view;
-	bool paused = false;
-	int gameState; //
+	int gameState = startScreen;
 	int area = 1;
 	int progress = 0;
 	int lives = 6;
 	int score = 0;
-	//AssetManager assetManager
+	//AssetManager assetManager;
 	//vector<GameObject *> groups[10];
 };
 

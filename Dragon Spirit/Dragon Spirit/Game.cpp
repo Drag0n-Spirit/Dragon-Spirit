@@ -40,9 +40,32 @@ void Game::addScore(unsigned int scoreBonus)
 	return;
 }
 
+
+//Give the player a partial life
 void Game::gainLife()
 {
 	lives++;
+
+	return;
+}
+
+
+//The player died. Reset to a checkpoint, unless they have no lives left
+void Game::death()
+{
+	lives -= 3;
+
+	if (lives <= -3)
+		gameState = gameOver;
+	else
+	{
+		//Kill all non-dragon GameObjects
+
+		//Set progress to nearest checkpoint
+
+		//
+
+	}
 
 	return;
 }
