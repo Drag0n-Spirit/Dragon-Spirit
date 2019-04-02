@@ -23,8 +23,27 @@ Game::~Game()
 {
 }
 
+
+//Currently a stub
 void Game::run()
 {
 
 	return;
 }
+
+
+//Add to player's score
+void Game::addScore(unsigned int scoreBonus)
+{
+	score += scoreBonus;
+
+	return;
+}
+
+void Game::gainLife()
+{
+	lives++;
+
+	return;
+}
+

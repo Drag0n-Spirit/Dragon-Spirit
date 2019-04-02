@@ -13,7 +13,7 @@ public:
 	Game(sf::RenderWindow *_window, int _area);
 	~Game();
 	void run();
-	void addScore(int scoreBonus);
+	void addScore(unsigned int scoreBonus);
 	void checkForSpawns();
 	void gainLife();
 	void death();
@@ -25,11 +25,11 @@ private:
 	sf::RenderWindow const * window;
 	sf::View view;
 	bool paused = false;
-	int gameState;
+	int gameState; //
 	int area = 1;
 	int progress = 0;
 	int lives = 6;
-	int score;
+	int score = 0;
 	//AssetManager assetManager
 	//vector<GameObject *> groups[10];
 };
