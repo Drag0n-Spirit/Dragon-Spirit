@@ -1,6 +1,7 @@
 #include "Dragon.h"
 #include <iostream>
 #include "GameObject.h"
+#include "PowerTypes.h"
 
 
 Dragon::Dragon()
@@ -74,12 +75,9 @@ void Dragon::update()
 		spawnProjectile(*this, false);
 		shotTimer = 15;
 	}
-
-
-	if (shotTimer > 0)
-		shotTimer--;
-	if (hitTimer > 0)
-		hitTimer--;
+	
+	if (hitTimer > 0) { hitTimer--; }
+	if (shotTimer > 0) { shotTimer--; }
 }
 
 
@@ -88,49 +86,54 @@ void Dragon::update()
    of the documentation. */
 void Dragon::collision(std::shared_ptr<GameObject> obj)
 {
-	if ((dynamic_cast<Enemy *>(obj) != nullptr 
+	if ((dynamic_cast<Enemy *>(obj) != nullptr
 		|| dynamic_cast<Projectile *>(obj) != nullptr) && hitTimer == 0)
-	{ // Subtract from health and make dragon invicible for some
-	  // amount of time
-		die();
-	}
-	else if (dynamic_cast<PowerUps *>(obj) != nullptr)
-	{ // Reward the player for running into a power up.
-
-	}
-
+		die(); // Subtract from health and make dragon invicible for some
+			   // amount of time
+	else if (dynamic_cast<Powerup *>(obj) != nullptr)
+		powerUp(dynamic_cast<Powerup *>(obj)); // Reward the player 
+											   // for running into a power up.
 }
 
 
+// Function to take away powerups that was given to the dragon earlier in
+// the game. This method is most likely going to be called from Dragon::die().
 void Dragon::powerDown()
 {
 
 }
-void Dragon::powerUp()
-{
 
+
+/* This method is called from Dragon::collision(). it is called when the
+   Dragon runs into a powerup. this method is suppose to give the Dragon
+   it's appropriate powerup. */
+void Dragon::powerUp(Powerup * powers)
+{
+	switch (powers->getValue())
+	{
+
+	}
 }
 
-int Dragon::getHits()
-{
 
-}
-int Dragon::getFire()
-{
-
-}
-void Dragon::shoot()
-{
-
-}
-
+/* This method is called from Dragon::collision. It is called when an the
+   Dragon runs into an objec that kills it. This method goes through the
+   procedures of killing the Dragon and deciding whether or not to go back
+   to the last checkpoint. */
 void Dragon::die()
 {
-	if (hits == 0)
-		death();
-	else
+	powerDown(); // Powerups that are taken away when the dragon dies
+				 // should now be taken away.
+	if (hits == 0) // A life should be taken away from the dragon.
+		death();   // Reset to checkpoint.
+	else // The dragon still has time left to get to the next checkpoint.
 	{
 		hits--;
 		hitTimer = 30;
 	}
 }
+
+
+// Getters
+int Dragon::getHits() { return hits; }
+int Dragon::getFire() { return fire; }

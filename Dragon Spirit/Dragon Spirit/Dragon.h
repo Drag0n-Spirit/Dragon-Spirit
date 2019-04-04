@@ -1,6 +1,14 @@
 #pragma once
 #include <iostream>
+#include <vector>
 #include "GameObject.h"
+#include "Powerup.h"
+
+struct Power
+{
+	PowerTypes powerup;
+	int timer;
+};
 
 
 class Dragon : public GameObject
@@ -14,16 +22,17 @@ public:
 	void collision(std::shared_ptr<GameObject> obj);
 
 	void powerDown();
-	void powerUp();
-
-	int getHits();
-	int getFire();
-	void shoot();
+	void powerUp(Powerup * powers);
 
 	void die();
 
+	// Getters
+	int getHits();
+	int getFire();
+
 private:
 	int hits, heads, fire, hitTimer = 0, shotTimer = 0,
-		fireType, powerups[5] = { 0, 0, 0, 0, 0 };
-};
+		fireType;
 
+	std::vector<Power> powerups;
+};
