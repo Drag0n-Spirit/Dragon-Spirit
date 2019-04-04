@@ -36,3 +36,10 @@ private:
 
 	std::vector<Power> powerups;
 };
+
+class Dragon
+{
+public:
+	Dragon();
+	~Dragon();
+};

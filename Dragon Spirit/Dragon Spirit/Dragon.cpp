@@ -137,3 +137,13 @@ void Dragon::die()
 // Getters
 int Dragon::getHits() { return hits; }
 int Dragon::getFire() { return fire; }
+
+
+Dragon::Dragon()
+{
+}
+
+
+Dragon::~Dragon()
+{
+}
