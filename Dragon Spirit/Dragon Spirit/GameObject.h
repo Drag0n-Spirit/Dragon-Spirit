@@ -14,7 +14,9 @@ public:
 
 	sf::RectangleShape getHitbox();
 
-private:
+protected:
+	//Game * gamePtr;
+
 	sf::Sprite object;
 	sf::RectangleShape hitbox;
 	sf::Vector2f position;
