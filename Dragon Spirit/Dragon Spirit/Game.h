@@ -2,6 +2,10 @@
 
 #include <vector>
 #include <SFML\Graphics.hpp>
+#include "PowerTypes.h"
+#include "GameObject.h"
+#include "PowerUp.h"
+#include "Projectile.h"
 
 
 class Game
@@ -18,15 +22,13 @@ public:
 	void endScreen();
 	void run();
 	void addScore(unsigned int scoreBonus);
-	//void checkForSpawns();
+	void checkForSpawns();
 	void gainLife();
 	void death();
 	//void spawnEnemy(SpawnData);
-	//void spawnPowerup(int type = 0);
-	/*
+	void spawnPowerup(int type = 0);
 	void spawnProjectile(GameObject * source, //the object that called the function
-	bool air = true, int fireType = 0);
-	*/
+		bool air = true, int fireType = 0);
 	void checkCollisions();
 private:
 	enum GameState {
@@ -45,6 +47,6 @@ private:
 	int lives = 6;
 	int score = 0;
 	//AssetManager assetManager;
-	//vector<GameObject *> groups[10];
+	std::vector<GameObject *> groups[10];
 };
 

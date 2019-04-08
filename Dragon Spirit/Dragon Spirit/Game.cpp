@@ -40,7 +40,6 @@ void Game::startScreen()
 void Game::running()
 {
 	//Iterate through vector array, updating objects
-	/*
 	for (int i = 0; i < 10; i++)
 	{
 		for (int j = 0; j < groups[i].size(); j++)
@@ -49,7 +48,7 @@ void Game::running()
 			//AssetManager needs to check the object here
 		}
 	}
-	*/
+	
 
 	checkCollisions();
 
@@ -63,9 +62,29 @@ void Game::running()
 
 	//Draw the background to the window
 	//For each object, draw it to the window
+	window->setView(view);
+
+	for (int i = 0; i < 10; i++)
+	{
+		for (int j = 0; j < groups[i].size(); j++)
+		{
+			//groups[i].at(j)
+			//AssetManager needs to draw the sprites to the window.
+		}
+	}
+
 
 	if (progress == bossTime)
 		gameState = _bossFight;
+
+	return;
+}
+
+
+//
+void Game::bossFight()
+{
+
 
 	return;
 }
