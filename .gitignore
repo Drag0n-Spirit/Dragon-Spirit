@@ -7,14 +7,20 @@ Dragon\ Spirit/Dragon\ Spirit/Debug/
 *.suo
 targetserver.*
 
+Dragon\ Spirit/.vs/Dragon\ Spirit/v15/Browse.VC.db
+*.db
+*.log
+*.tlog
+*.pdb
+*.ilk
+*.exe
+*.ilk
+*.pdb
+*.tlog
+*.tlog
+*.tlog
+*.obj
 
-Dragon\ Spirit/.vs/Dragon\ Spirit/v15/.suo
-Dragon\ Spirit/.vs/Dragon\ Spirit/v15/Browse.VC.db
-*.db
-Dragon\ Spirit/.vs/Dragon\ Spirit/v15/.suo
-*.db
-*.db
-Dragon\ Spirit/Debug/Dragon\ Spirit.exe
 Dragon\ Spirit/Debug/Dragon\ Spirit.exe
 *.ilk
 *.pdb
@@ -24,35 +30,3 @@ Dragon\ Spirit/Debug/Dragon\ Spirit.exe
 *.obj
 *.tlog
 *.db
-Dragon\ Spirit/.vs/Dragon\ Spirit/v15/.suo
-*.log
-*.tlog
-*.pdb
-*.ilk
-*.exe
-*.ilk
-*.pdb
-*.tlog
-*.tlog
-*.tlog
-*.obj
-Dragon\ Spirit/.vs/Dragon\ Spirit/v15/.suo
-Dragon\ Spirit/.vs/Dragon\ Spirit/v15/Browse.VC.db
-Dragon Spirit/.vs/Dragon Spirit/v15/.suo
-Dragon Spirit/.vs/Dragon Spirit/v15/.suo
-Dragon Spirit/.vs/Dragon Spirit/v15/.suo
-*.exe
-*.ilk
-*.pdb
-*.log
-*.obj
-*.pch
-*.tlog
-*.tlog
-*.tlog
-*.lastbuildstate
-*.tlog
-*.tlog
-*.obj
-*.idb
-*.pdb
