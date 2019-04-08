@@ -1,30 +1,14 @@
-Centipede/.vs/
-Centipede/Debug/
-Centipede/Centipede/Debug/
+Dragon\ Spirit/.vs/
+Dragon\ Spirit/Debug/
+Dragon\ Spirit/Dragon\ Spirit/Debug/
 *.filters
 *.user
 *.ipch
 *.suo
 targetserver.*
 
-
-Centipede/.vs/Centipede/v15/.suo
-Centipede/.vs/Centipede/v15/Browse.VC.db
+Dragon\ Spirit/.vs/Dragon\ Spirit/v15/Browse.VC.db
 *.db
-Centipede/.vs/Centipede/v15/.suo
-*.db
-*.db
-Centipede/Debug/Centipede.exe
-Centipede/Debug/Centipede.exe
-*.ilk
-*.pdb
-*.idb
-*.pdb
-*.obj
-*.obj
-*.tlog
-*.db
-Centipede/.vs/Centipede/v15/.suo
 *.log
 *.tlog
 *.pdb
@@ -36,11 +20,13 @@ Centipede/.vs/Centipede/v15/.suo
 *.tlog
 *.tlog
 *.obj
-<<<<<<< HEAD
-Centipede/.vs/Centipede/v15/.suo
-Centipede/.vs/Centipede/v15/Browse.VC.db
-Dragon Spirit/.vs/Dragon Spirit/v15/Browse.VC.opendb
-=======
-Dragon\ Spirit/.vs/Dragon\ Spirit/v15/.suo
-Dragon\ Spirit/.vs/Dragon\ Spirit/v15/Browse.VC.db
->>>>>>> parent of 3ae7813... gitignore update
+
+Dragon\ Spirit/Debug/Dragon\ Spirit.exe
+*.ilk
+*.pdb
+*.idb
+*.pdb
+*.obj
+*.obj
+*.tlog
+*.db
