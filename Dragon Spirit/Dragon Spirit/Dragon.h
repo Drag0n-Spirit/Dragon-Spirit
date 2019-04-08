@@ -1,4 +1,5 @@
 #pragma once
+
 #include <iostream>
 #include <vector>
 #include "GameObject.h"
@@ -23,7 +24,7 @@ public:
 	void collision(std::shared_ptr<GameObject> obj);
 
 	void powerDown();
-	void powerUp(Powerup * powers);
+	void powerUp(PowerUp * powers);
 
 	void die();
 

@@ -2,6 +2,9 @@
 #include <iostream>
 #include "SFML/Graphics.hpp"
 #include "GameObject.h"
+#include "Projectile.h"
+#include "PowerUp.h"
+#include "Enemy.h"
 #include "PowerTypes.h"
 
 
@@ -65,7 +68,7 @@ void Dragon::update()
 	if ((sf::Keyboard::isKeyPressed(sf::Keyboard::LControl) 
 		|| sf::Keyboard::isKeyPressed(sf::Keyboard::RControl)) && shotTimer == 0)
 	{
-		spawnProjectile(*this);
+		gamePtr->spawnProjectile(*this);
 		shotTimer = 15;
 	}
 
@@ -73,7 +76,7 @@ void Dragon::update()
 	if((sf::Keyboard::isKeyPressed(sf::Keyboard::LAlt) 
 		|| sf::Keyboard::isKeyPressed(sf::Keyboard::RAlt)) && shotTimer == 0)
 	{
-		spawnProjectile(*this, false);
+		gamePtr->spawnProjectile(*this, false);
 		shotTimer = 15;
 	}
 	
@@ -91,8 +94,8 @@ void Dragon::collision(std::shared_ptr<GameObject> obj)
 		|| dynamic_cast<Projectile *>(obj) != nullptr) && hitTimer == 0)
 		die(); // Subtract from health and make dragon invicible for some
 			   // amount of time
-	else if (dynamic_cast<Powerup *>(obj) != nullptr)
-		powerUp(dynamic_cast<Powerup *>(obj)); // Reward the player 
+	else if (dynamic_cast<PowerUp *>(obj) != nullptr)
+		powerUp(dynamic_cast<PowerUp *>(obj)); // Reward the player 
 											   // for running into a power up.
 }
 
@@ -108,7 +111,7 @@ void Dragon::powerDown()
 /* This method is called from Dragon::collision(). it is called when the
    Dragon runs into a powerup. this method is suppose to give the Dragon
    it's appropriate powerup. */
-void Dragon::powerUp(Powerup * powers)
+void Dragon::powerUp(PowerUp * powers)
 {
 	switch (powers->getValue())
 	{
