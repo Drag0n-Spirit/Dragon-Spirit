@@ -3,6 +3,7 @@
 #include <vector>
 #include "GameObject.h"
 #include "Powerup.h"
+#include "PowerTypes.h"
 
 struct Power
 {
@@ -35,11 +36,4 @@ private:
 		fireType;
 
 	std::vector<Power> powerups;
-};
-
-class Dragon
-{
-public:
-	Dragon();
-	~Dragon();
 };

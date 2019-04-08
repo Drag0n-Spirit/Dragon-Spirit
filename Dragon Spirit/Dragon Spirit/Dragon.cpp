@@ -1,5 +1,6 @@
 #include "Dragon.h"
 #include <iostream>
+#include "SFML/Graphics.hpp"
 #include "GameObject.h"
 #include "PowerTypes.h"
 
@@ -7,7 +8,7 @@
 Dragon::Dragon()
 {
 }
-Dragon(int _xPos, int _yPos)
+Dragon::Dragon(int _xPos, int _yPos)
 {
 	position.x = _xPos;
 	position.y = _yPos;
@@ -137,13 +138,3 @@ void Dragon::die()
 // Getters
 int Dragon::getHits() { return hits; }
 int Dragon::getFire() { return fire; }
-
-
-Dragon::Dragon()
-{
-}
-
-
-Dragon::~Dragon()
-{
-}
