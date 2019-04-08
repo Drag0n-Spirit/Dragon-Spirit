@@ -25,11 +25,47 @@ Game::~Game()
 }
 
 
-//
+//Show the start screen and advance to the appropriate animation when 1 is
+//pressed.
 void Game::startScreen()
 {
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num1))
 		gameState = _animation;
+
+	return;
+}
+
+
+//
+void Game::running()
+{
+	//Iterate through vector array, updating objects
+	/*
+	for (int i = 0; i < 10; i++)
+	{
+		for (int j = 0; j < groups[i].size(); j++)
+		{
+			groups[i].at(j)->update();
+			//AssetManager needs to check the object here
+		}
+	}
+	*/
+
+	checkCollisions();
+
+	//Check here for an active earthquake.
+	//For each ground enemy, call getHit.
+
+	//Increment progress and scroll level
+	progress++;
+
+	//AssetManager checks for spawns here
+
+	//Draw the background to the window
+	//For each object, draw it to the window
+
+	if (progress == bossTime)
+		gameState = _bossFight;
 
 	return;
 }
@@ -110,6 +146,7 @@ void Game::death()
 		//Kill all non-dragon GameObjects
 
 		//Set progress to nearest checkpoint
+		progress = checkpoints.at(checkpoints.size() - 1);
 
 		//
 
