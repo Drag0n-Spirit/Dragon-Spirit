@@ -1,12 +1,13 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include <math.h>
+#include "Game.h"
 
 class GameObject
 {
 public:
-	GameObject(sf::Sprite,float,float);
-	GameObject(sf::Sprite, sf::Vector2f);
+	GameObject(sf::Sprite,float,float, std::shared_ptr<Game>);
+	GameObject(sf::Sprite, sf::Vector2f, std::shared_ptr<Game>);
 	~GameObject();
 
 	virtual void update();
@@ -15,7 +16,7 @@ public:
 	sf::RectangleShape getHitbox();
 
 protected:
-	//Game * gamePtr;
+	std::shared_ptr<Game> gamePtr;
 
 	sf::Sprite object;
 	sf::RectangleShape hitbox;
