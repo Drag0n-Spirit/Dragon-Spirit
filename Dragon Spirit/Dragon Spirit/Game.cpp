@@ -126,11 +126,7 @@ void Game::bossFight()
 //
 void Game::animation()
 {
-	//Determine which type of animation to use: fly or dive
-
-	//Move dragon
-
-
+	gameState = _running;
 
 	return;
 }
