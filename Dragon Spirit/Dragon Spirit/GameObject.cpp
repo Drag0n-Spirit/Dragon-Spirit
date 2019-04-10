@@ -2,7 +2,7 @@
 #include "GameObject.h"
 
 
-GameObject::GameObject(sf::Sprite face, float x, float y)
+GameObject::GameObject(sf::Sprite face, float x, float y, std::shared_ptr<Game> game)
 {
 	//Initialize values
 	object = face;
@@ -16,9 +16,11 @@ GameObject::GameObject(sf::Sprite face, float x, float y)
 	//Size is the same as the size of the sprite.
 	hitbox.setSize(sf::Vector2f(spriteBounds.width, spriteBounds.height));
 	hitbox.setOrigin(x, y);
+
+	gamePtr = game;
 }
 
-GameObject::GameObject(sf::Sprite face, sf::Vector2f pos)
+GameObject::GameObject(sf::Sprite face, sf::Vector2f pos, std::shared_ptr<Game> game)
 {
 	//Initialize values
 	object = face;
@@ -32,6 +34,8 @@ GameObject::GameObject(sf::Sprite face, sf::Vector2f pos)
 	//Size is the same as the size of the sprite.
 	hitbox.setSize(sf::Vector2f(spriteBounds.width, spriteBounds.height));
 	hitbox.setOrigin(pos);
+
+	gamePtr = game;
 }
 
 GameObject::~GameObject()
