@@ -40,7 +40,6 @@ void Game::startScreen()
 void Game::running()
 {
 	//Iterate through vector array, updating objects
-	/*
 	for (int i = 0; i < 10; i++)
 	{
 		for (int j = 0; j < groups[i].size(); j++)
@@ -49,7 +48,7 @@ void Game::running()
 			//AssetManager needs to check the object here
 		}
 	}
-	*/
+	
 
 	checkCollisions();
 
