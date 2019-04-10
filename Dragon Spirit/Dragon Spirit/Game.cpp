@@ -116,8 +116,8 @@ void Game::bossFight()
 		}
 	}
 
-	if (progress == bossTime)
-		gameState = _bossFight;
+	if (groups[airEnemy].size() == 0 && groups[groundEnemy].size() == 0)
+		gameState = _animation;
 
 	return;
 }
