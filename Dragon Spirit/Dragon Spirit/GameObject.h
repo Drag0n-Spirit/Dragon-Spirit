@@ -3,6 +3,8 @@
 #include <math.h>
 #include "Game.h"
 
+///TODO: Comment this in depth at some point.
+
 class GameObject
 {
 public:
