@@ -11,6 +11,18 @@
 class Game
 {
 public:
+	enum objNum
+	{
+		dragon = 0,
+		powerup,
+		enemyProjectile,
+		airEnemy,
+		groundEnemy,
+		dormant,
+		dragonFire,
+		dragonBomb,
+		effects, terrain
+	};
 	Game(sf::RenderWindow *_window);
 	Game(sf::RenderWindow *_window, int _area);
 	~Game();

@@ -221,3 +221,67 @@ void Game::death()
 }
 
 
+// Function to check collisions between game objects
+void Game::checkCollisions()
+{
+	for (int i = 0; i < *(&groups + 1) - groups; i++)
+	{
+		if (i == dragon) // Dragon to other groups collision.
+		{
+			for (int i = 0; i < groups[dragon].size(); i++)
+			{
+				// dragon to powerup.
+				for (int j = 0; j < groups[powerup].size(); j++)
+					if (groups[dragon].at(i)->getHitbox().intersects(groups[powerup].at(j)->getHitbox()))
+					{
+						groups[dragon].at(i)->collision(groups[powerup].at(j));
+						groups[powerup].at(j)->collision(groups[dragon].at(i));
+					}
+
+				// dragon to enemyProjectile.
+				for(int j = 0; j < groups[enemyProjectile].size() j++)
+					if (groups[dragon].at(i)->getHitbox().intersects(groups[enemyProjectile].at(j)->getHitbox()))
+					{
+						groups[dragon].at(i)->collision(groups[enemyProjectile].at(j));
+						groups[enemyProjectile].at(j)->collision(groups[dragon].at(i));
+					}
+
+				// dragon to airEnemy.
+				for(int j = 0; j < groups[airEnemy].size(); j++)
+					if (groups[dragon].at(i)->getHitbox().intersects(groups[airEnemy].at(j)->getHitbox()))
+					{
+						groups[dragon].at(i)->collision(groups[airEnemy].at(j));
+						groups[airEnemy].at(j)->collision(groups[dragon].at(i));
+					}
+			}
+		}
+
+		if (i == dragonFire) // Dragon fire to other groups collision.
+		{
+			for (int i = 0; i < groups[dragonFire].size(); i++)
+			{
+				// dragon fire to airEnemy.
+				for(int j = 0; j < groups[airEnemy].size(); j++)
+					if (groups[dragonFire].at(i)->getHitbox().intersects(groups[airEnemy].at(j)->getHitbox()))
+					{
+						groups[dragonFire].at(i)->collision(groups[airEnemy].at(j));
+						groups[airEnemy].at(j)->collision(groups[dragonFire].at(i));
+					}
+			}
+		}
+
+		if (i == dragonBomb) // Dragon bomb to other groups collision.
+		{
+			for (int i = 0; i < groups[dragonBomb].size(); i++)
+			{
+				// dragon bomb to groundEnemy.
+				for (int j = 0; j < groups[groundEnemy].size(); j++)
+					if (groups[dragonBomb].at(i)->getHitbox().intersects(groups[groundEnemy].at(j)->getHitbox()))
+					{
+						groups[dragonBomb].at(i)->collision(groups[groundEnemy].at(j));
+						groups[groundEnemy].at(j)->collision(groups[dragonBomb].at(i));
+					}
+			}
+		}
+	}
+}
