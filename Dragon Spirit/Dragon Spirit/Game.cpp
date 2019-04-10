@@ -57,10 +57,13 @@ void Game::running()
 
 	//Increment progress and scroll level
 	progress++;
+	view.move(0.f, -1.f);
 
 	//AssetManager checks for spawns here
 
 	//Draw the background to the window
+
+
 	//For each object, draw it to the window
 	window->setView(view);
 
@@ -68,11 +71,10 @@ void Game::running()
 	{
 		for (int j = 0; j < groups[i].size(); j++)
 		{
-			//groups[i].at(j)
+			groups[i].at(j);
 			//AssetManager needs to draw the sprites to the window.
 		}
 	}
-
 
 	if (progress == bossTime)
 		gameState = _bossFight;
@@ -84,6 +86,50 @@ void Game::running()
 //
 void Game::bossFight()
 {
+	//Iterate through vector array, updating objects
+	for (int i = 0; i < 10; i++)
+	{
+		for (int j = 0; j < groups[i].size(); j++)
+		{
+			groups[i].at(j)->update();
+			//AssetManager needs to check the object here
+		}
+	}
+
+	checkCollisions();
+
+	//Check here for an active earthquake.
+	//For each ground enemy, call getHit.
+
+	//Draw the background to the window
+
+
+	//For each object, draw it to the window
+	window->setView(view);
+
+	for (int i = 0; i < 10; i++)
+	{
+		for (int j = 0; j < groups[i].size(); j++)
+		{
+			groups[i].at(j);
+			//AssetManager needs to draw the sprites to the window.
+		}
+	}
+
+	if (progress == bossTime)
+		gameState = _bossFight;
+
+	return;
+}
+
+
+//
+void Game::animation()
+{
+	//Determine which type of animation to use: fly or dive
+
+	//Move dragon
+
 
 
 	return;
