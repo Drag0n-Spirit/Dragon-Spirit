@@ -16,8 +16,7 @@ struct Power
 class Dragon : public GameObject
 {
 public:
-	Dragon();
-	Dragon(int _xPos, int _yPos);
+	Dragon(sf::Sprite face, float x, float y, std::shared_ptr<Game> game);
 	~Dragon();
 	
 	void update();

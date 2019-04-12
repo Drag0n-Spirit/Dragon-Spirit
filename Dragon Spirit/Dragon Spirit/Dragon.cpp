@@ -8,13 +8,8 @@
 #include "PowerTypes.h"
 
 
-Dragon::Dragon()
+Dragon::Dragon(sf::Sprite face, float x, float y, std::shared_ptr<Game> game) : GameObject(face, x, y, game)
 {
-}
-Dragon::Dragon(int _xPos, int _yPos)
-{
-	position.x = _xPos;
-	position.y = _yPos;
 }
 Dragon::~Dragon()
 {
@@ -80,8 +75,16 @@ void Dragon::update()
 		shotTimer = 15;
 	}
 	
+	// increment timers.
 	if (hitTimer > 0) { hitTimer--; }
 	if (shotTimer > 0) { shotTimer--; }
+
+	//update position with velocity.
+	position.x += velocity.x;
+	position.y += velocity.y;
+
+	hitbox.move(velocity);
+	object.move(velocity);
 }
 
 
@@ -115,7 +118,38 @@ void Dragon::powerUp(PowerUp * powers)
 {
 	switch (powers->getValue())
 	{
-
+	case DragonHeads:
+		break;
+	case BlueEgg:
+		break;
+	case FirePower:
+		break;
+	case RedEgg:
+		break;
+	case MagicEye:
+		break;
+	case YellowEgg:
+		break;
+	case LongFire:
+		break;
+	case WideFire:
+		break;
+	case HomingFire:
+		break;
+	case SmallDragon:
+		break;
+	case Earthquake:
+		break;
+	case PowerWing:
+		break;
+	case Extend:
+		break;
+	case PowerDown:
+		break; 
+	case Diamond:
+		break;
+	case Gold:
+		break;
 	}
 }
 
