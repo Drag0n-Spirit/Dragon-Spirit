@@ -10,6 +10,7 @@ Update screen information.
 #include "SpawnData.h"
 #include "GameObject.h"
 #include <iostream>
+#include <algorithm>
 #include <vector>
 
 class AssetManager
@@ -18,7 +19,7 @@ public:
 	AssetManager();
 	~AssetManager();
 
-	void sortSpawns(); //Quicksort SpawnData by y.
+	void sortSpawns(); //Quicksort SpawnData by spawnPoint value.
 	bool loadLevel(); //Loads a level from file, returning true if successful.
 	/*
 	How exactly will a level be stored?
