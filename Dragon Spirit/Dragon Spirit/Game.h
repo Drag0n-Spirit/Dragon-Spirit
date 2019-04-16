@@ -21,11 +21,21 @@ public:
 		dormant,
 		dragonFire,
 		dragonBomb,
-		effects, terrain
+		effects, 
+		terrain,
+		OBJNUM_SIZE
 	};
 	Game(sf::RenderWindow *_window);
 	Game(sf::RenderWindow *_window, int _area);
 	~Game();
+
+	//Spawns a Projectile and adds it to groups vector.
+	template <typename type> std::shared_ptr<type> spawnProjectile(sf::Sprite face, std::shared_ptr<GameObject> obj);
+	//Spawns an Enemy and adds it to groups vector.
+	//template <typename type> std::shared_ptr<type> spawnEnemy(sf::Sprite face, sf::Vector2f pos);
+	//Spawns a Powerup and adds it to groups vector.
+	template <typename type> std::shared_ptr<type> spawnPowerup(sf::Sprite face, sf::Vector2f pos);
+
 	void startScreen();
 	void running();
 	void bossFight();
