@@ -56,7 +56,7 @@ void GameObject::collision(std::shared_ptr<GameObject> collisionObject)
 {
 }
 
-sf::RectangleShape GameObject::getHitbox()
+sf::FloatRect GameObject::getHitbox()
 {
-	return hitbox;
+	return hitbox.getGlobalBounds();
 }
