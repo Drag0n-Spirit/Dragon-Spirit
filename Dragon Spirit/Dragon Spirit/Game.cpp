@@ -235,7 +235,7 @@ void Game::checkCollisions()
 					}
 
 				// dragon to enemyProjectile.
-				for(int j = 0; j < groups[enemyProjectile].size() j++)
+				for(int j = 0; j < groups[enemyProjectile].size(); j++)
 					if (groups[dragon].at(i)->getHitbox().intersects(groups[enemyProjectile].at(j)->getHitbox()))
 					{
 						groups[dragon].at(i)->collision(groups[enemyProjectile].at(j));

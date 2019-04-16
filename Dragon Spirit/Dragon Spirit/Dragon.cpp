@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "Dragon.h"
 #include <iostream>
 #include "SFML/Graphics.hpp"
@@ -6,6 +7,7 @@
 #include "PowerUp.h"
 #include "Enemy.h"
 #include "PowerTypes.h"
+#include "Game.h"
 
 
 Dragon::Dragon()
@@ -90,12 +92,12 @@ void Dragon::update()
    of the documentation. */
 void Dragon::collision(std::shared_ptr<GameObject> obj)
 {
-	if ((dynamic_cast<Enemy *>(obj) != nullptr
-		|| dynamic_cast<Projectile *>(obj) != nullptr) && hitTimer == 0)
+	if ((dynamic_cast<Enemy *>(obj.get()) != nullptr
+		|| dynamic_cast<Projectile *>(obj.get()) != nullptr) && hitTimer == 0)
 		die(); // Subtract from health and make dragon invicible for some
 			   // amount of time
-	else if (dynamic_cast<PowerUp *>(obj) != nullptr)
-		powerUp(dynamic_cast<PowerUp *>(obj)); // Reward the player 
+	else if (dynamic_cast<PowerUp *>(obj.get()) != nullptr)
+		powerUp(dynamic_cast<PowerUp *>(obj.get())); // Reward the player 
 											   // for running into a power up.
 }
 
@@ -129,7 +131,7 @@ void Dragon::die()
 	powerDown(); // Powerups that are taken away when the dragon dies
 				 // should now be taken away.
 	if (hits == 0) // A life should be taken away from the dragon.
-		death();   // Reset to checkpoint.
+		gamePtr.get()->death();   // Reset to checkpoint.
 	else // The dragon still has time left to get to the next checkpoint.
 	{
 		hits--;

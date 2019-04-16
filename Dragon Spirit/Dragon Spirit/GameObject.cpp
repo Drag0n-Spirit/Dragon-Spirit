@@ -1,5 +1,6 @@
 #include "pch.h"
 #include "GameObject.h"
+#include "Game.h"
 
 
 GameObject::GameObject(sf::Sprite face, float x, float y, std::shared_ptr<Game> game)
@@ -56,7 +57,7 @@ void GameObject::collision(std::shared_ptr<GameObject> collisionObject)
 {
 }
 
-sf::RectangleShape GameObject::getHitbox()
+sf::FloatRect GameObject::getHitbox()
 {
-	return hitbox;
+	return hitbox.getGlobalBounds();
 }
