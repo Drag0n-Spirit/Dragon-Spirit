@@ -157,15 +157,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Dragon.h" />
+    <ClInclude Include="Enemy.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameObject.h" />
+    <ClInclude Include="ObjectNumber.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="PowerTypes.h" />
     <ClInclude Include="PowerUp.h" />
     <ClInclude Include="Projectile.h" />
+    <ClInclude Include="SpawnData.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Dragon Spirit.cpp" />
+    <ClCompile Include="Dragon.cpp" />
+    <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="pch.cpp">
