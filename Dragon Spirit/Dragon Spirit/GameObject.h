@@ -12,7 +12,7 @@ public:
 	virtual void update();
 	virtual void collision(std::shared_ptr<GameObject>);
 
-	sf::RectangleShape getHitbox();
+	sf::FloatRect getHitbox();
 
 protected:
 	//Game * gamePtr;
