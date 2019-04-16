@@ -16,7 +16,7 @@ Update screen information.
 class AssetManager
 {
 public:
-	AssetManager();
+	AssetManager(std::vector<std::shared_ptr<GameObject>>, std::shared_ptr<Game>);
 	~AssetManager();
 
 	void sortSpawns(); //Quicksort SpawnData by spawnPoint value.
@@ -30,10 +30,13 @@ public:
 	*/
 
 	//Handles sprite updates depending on type and status of GameObject.
-	void updateSprite(std::shared_ptr<GameObject>);
+	void updateSprite();
 
 private:
 	std::vector<SpawnData> spawnData;
 	std::vector<int> checkpoints;
+
+	std::vector<std::shared_ptr<GameObject>> objects;
+	std::shared_ptr<Game> gamePtr;
 };
 

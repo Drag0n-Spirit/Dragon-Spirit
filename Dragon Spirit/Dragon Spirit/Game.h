@@ -28,6 +28,9 @@ public:
 	bool air = true, int fireType = 0);
 	*/
 	void checkCollisions();
+
+	sf::Vector2u getScreenDim();
+
 private:
 	enum GameState {
 		_startScreen, _running, _bossFight, _animation,

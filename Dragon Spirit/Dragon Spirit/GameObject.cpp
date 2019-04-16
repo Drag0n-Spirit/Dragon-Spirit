@@ -18,6 +18,9 @@ GameObject::GameObject(sf::Sprite face, float x, float y, std::shared_ptr<Game> 
 	hitbox.setOrigin(x, y);
 
 	gamePtr = game;
+
+	//health is defaulted to 1.
+	health = 1;
 }
 
 GameObject::GameObject(sf::Sprite face, sf::Vector2f pos, std::shared_ptr<Game> game)
@@ -60,4 +63,14 @@ void GameObject::collision(std::shared_ptr<GameObject> collisionObject)
 sf::FloatRect GameObject::getHitbox()
 {
 	return hitbox.getGlobalBounds();
+}
+
+sf::Vector2f GameObject::getPosition()
+{
+	return position;
+}
+
+int GameObject::getHealth()
+{
+	return health;
 }

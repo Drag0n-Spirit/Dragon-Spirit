@@ -155,4 +155,9 @@ void Game::death()
 	return;
 }
 
+sf::Vector2u Game::getScreenDim()
+{
+	return window->getSize();
+}
+
 

@@ -1,34 +1,24 @@
-﻿  AssetManager.cpp
-c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\xutility(1108): error C2064: term does not evaluate to a function taking 2 arguments
-  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\xutility(1107): note: see reference to function template instantiation 'bool std::_Debug_lt_pred<_Pr&,SpawnData&,SpawnData&>(int&,_Ty1,_Ty2) noexcept(<expr>)' being compiled
+﻿  pch.cpp
+  AssetManager.cpp
+  Dragon Spirit.cpp
+c:\users\19i9m01\documents\github\dragon-spirit\dragon spirit\dragon spirit\dragon spirit.cpp(38): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
           with
           [
-              _Pr=int,
-              _Ty1=SpawnData &,
-              _Ty2=SpawnData &
+              T=float
           ]
-  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\algorithm(4000): note: see reference to function template instantiation 'std::pair<_RanIt,_RanIt> std::_Partition_by_median_guess_unchecked<_RanIt,_Pr>(_RanIt,_RanIt,_Pr)' being compiled
+c:\users\19i9m01\documents\github\dragon-spirit\dragon spirit\dragon spirit\dragon spirit.cpp(40): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
           with
           [
-              _RanIt=SpawnData *,
-              _Pr=int
+              T=float
           ]
-  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\algorithm(4034): note: see reference to function template instantiation 'void std::_Sort_unchecked<SpawnData*,_Fn>(_RanIt,_RanIt,int,_Pr)' being compiled
-          with
-          [
-              _Fn=int,
-              _RanIt=SpawnData *,
-              _Pr=int
-          ]
-  c:\users\19i9m01\documents\github\dragon-spirit\dragon spirit\dragon spirit\assetmanager.cpp(21): note: see reference to function template instantiation 'void std::sort<std::_Vector_iterator<std::_Vector_val<std::_Simple_types<_Ty>>>,int>(const _RanIt,const _RanIt,_Pr)' being compiled
-          with
-          [
-              _Ty=SpawnData,
-              _RanIt=std::_Vector_iterator<std::_Vector_val<std::_Simple_types<SpawnData>>>,
-              _Pr=int
-          ]
-c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\xutility(1108): error C2056: illegal expression
-c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\algorithm(3907): error C2064: term does not evaluate to a function taking 2 arguments
-c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\algorithm(3914): error C2064: term does not evaluate to a function taking 2 arguments
-c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\algorithm(3929): error C2064: term does not evaluate to a function taking 2 arguments
-c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\algorithm(3949): error C2064: term does not evaluate to a function taking 2 arguments
+  Game.cpp
+  GameObject.cpp
+  PowerUp.cpp
+  Projectile.cpp
+  Generating Code...
+Game.obj : error LNK2019: unresolved external symbol "public: void __thiscall Game::bossFight(void)" (?bossFight@Game@@QAEXXZ) referenced in function "public: void __thiscall Game::run(void)" (?run@Game@@QAEXXZ)
+Game.obj : error LNK2019: unresolved external symbol "public: void __thiscall Game::animation(void)" (?animation@Game@@QAEXXZ) referenced in function "public: void __thiscall Game::run(void)" (?run@Game@@QAEXXZ)
+Game.obj : error LNK2019: unresolved external symbol "public: void __thiscall Game::gameOver(void)" (?gameOver@Game@@QAEXXZ) referenced in function "public: void __thiscall Game::run(void)" (?run@Game@@QAEXXZ)
+Game.obj : error LNK2019: unresolved external symbol "public: void __thiscall Game::endScreen(void)" (?endScreen@Game@@QAEXXZ) referenced in function "public: void __thiscall Game::run(void)" (?run@Game@@QAEXXZ)
+Game.obj : error LNK2019: unresolved external symbol "public: void __thiscall Game::checkCollisions(void)" (?checkCollisions@Game@@QAEXXZ) referenced in function "public: void __thiscall Game::running(void)" (?running@Game@@QAEXXZ)
+C:\Users\19I9M01\Documents\GitHub\Dragon-Spirit\Dragon Spirit\Debug\Dragon Spirit.exe : fatal error LNK1120: 5 unresolved externals
