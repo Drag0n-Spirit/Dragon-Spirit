@@ -10,13 +10,9 @@
 #include "Game.h"
 
 
-Dragon::Dragon()
+Dragon::Dragon(sf::Sprite face, float _xPos, float _yPos,
+	std::shared_ptr<Game> game) : GameObject(face, _xPos, _yPos, game)
 {
-}
-Dragon::Dragon(int _xPos, int _yPos)
-{
-	position.x = _xPos;
-	position.y = _yPos;
 }
 Dragon::~Dragon()
 {
@@ -70,7 +66,8 @@ void Dragon::update()
 	if ((sf::Keyboard::isKeyPressed(sf::Keyboard::LControl) 
 		|| sf::Keyboard::isKeyPressed(sf::Keyboard::RControl)) && shotTimer == 0)
 	{
-		gamePtr->spawnProjectile(*this);
+		gamePtr.get()->spawnProjectile(dynamic_cast<GameObject *>(this), true,
+			fireType);
 		shotTimer = 15;
 	}
 
@@ -78,7 +75,7 @@ void Dragon::update()
 	if((sf::Keyboard::isKeyPressed(sf::Keyboard::LAlt) 
 		|| sf::Keyboard::isKeyPressed(sf::Keyboard::RAlt)) && shotTimer == 0)
 	{
-		gamePtr->spawnProjectile(*this, false);
+		gamePtr.get()->spawnProjectile(dynamic_cast<GameObject *>(this), false);
 		shotTimer = 15;
 	}
 	

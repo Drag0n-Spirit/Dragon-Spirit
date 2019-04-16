@@ -2,7 +2,7 @@
 #include "Projectile.h"
 
 Projectile::Projectile(sf::Sprite face, std::shared_ptr<Game> game, std::shared_ptr<GameObject> source)
-	: GameObject(face,source->getHitbox().getPosition(), game)
+	: GameObject(face,source->getPosition(), game)
 {
 	/*if (dynamic_cast<Dragon>(source) != nullptr)
 		damage = source->getFire() / 3;

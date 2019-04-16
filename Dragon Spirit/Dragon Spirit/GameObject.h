@@ -16,6 +16,7 @@ public:
 	virtual void collision(std::shared_ptr<GameObject>);
 
 	sf::FloatRect getHitbox();
+	sf::Vector2f getPosition();
 
 protected:
 	std::shared_ptr<Game> gamePtr;
