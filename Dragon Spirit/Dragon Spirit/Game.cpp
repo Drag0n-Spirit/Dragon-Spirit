@@ -179,6 +179,28 @@ void Game::animation()
 }
 
 
+//Unfinished
+void Game::gameOver()
+{
+	//Display scores
+
+	//Advance to startScreen
+
+	return;
+}
+
+
+//Unfinished
+void Game::endScreen()
+{
+	//Display victory screens
+
+	//Advance to startScreen
+
+	return;
+}
+
+
 //Handles pausing if game is in background, and calls functions based on gameState
 void Game::run()
 {
@@ -259,6 +281,14 @@ void Game::death()
 		//
 
 	}
+
+	return;
+}
+
+
+void Game::spawnProjectile(GameObject * source, bool air, int fireType)
+{
+	//Spawn the projectile
 
 	return;
 }
