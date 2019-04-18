@@ -14,7 +14,7 @@ public:
 
 	virtual void update();
 	virtual void collision(std::shared_ptr<GameObject>);
-
+	virtual void change_texture(sf::Texture);
 	sf::FloatRect getHitbox();
 	sf::Vector2f getPosition();
 
@@ -25,7 +25,7 @@ protected:
 	sf::RectangleShape hitbox;
 	sf::Vector2f position;
 	sf::Vector2f velocity;
-
+	sf::Texture texture;
 
 
 };
