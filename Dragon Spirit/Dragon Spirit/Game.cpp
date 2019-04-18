@@ -97,10 +97,9 @@ void Game::running()
 	}
 	//bad code that is deleted when asset manger is done
 	sf::Sprite Map;
-	GameObject Map1(Map,0,0,nullptr);
 	sf::Texture maptexture;
 	maptexture.loadFromFile("Stage_1.png");
-	Map1.change_texture(maptexture);
+	Map.setTexture(maptexture);
 
 
 
