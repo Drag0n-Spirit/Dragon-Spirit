@@ -210,6 +210,7 @@ void Game::run()
 	else if (event.type == sf::Event::GainedFocus)
 		isPaused = false;
 
+	//Testing
 	std::cout << gameState << std::endl;
 
 	//If not paused, do something based on the gameState
