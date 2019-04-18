@@ -6,6 +6,7 @@
 #include "GameObject.h"
 #include "PowerUp.h"
 #include "Projectile.h"
+#include <iostream>
 
 
 class Game
@@ -48,7 +49,8 @@ public:
 	void gainLife();
 	void death();
 	//void spawnEnemy(SpawnData);
-	void spawnPowerup(int type = 0);
+	//void spawnEnemy(GameObject * source);
+	void spawnPowerup(GameObject * source, int type = -1);
 	void spawnProjectile(GameObject * source, //the object that called the function
 		bool air = true, int fireType = 0);
 	void checkCollisions();

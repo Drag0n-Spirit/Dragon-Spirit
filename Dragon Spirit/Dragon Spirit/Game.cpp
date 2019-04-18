@@ -210,6 +210,8 @@ void Game::run()
 	else if (event.type == sf::Event::GainedFocus)
 		isPaused = false;
 
+	std::cout << gameState << std::endl;
+
 	//If not paused, do something based on the gameState
 	if (!isPaused)
 	{
@@ -254,6 +256,16 @@ void Game::addScore(unsigned int scoreBonus)
 	return;
 }
 
+void Game::checkForSpawns()
+{
+	//Compare progress to AssetManager's vector.
+
+	//While spawn found in vector at progress, 
+	//spawn and step forwards in the vector
+
+	return;
+}
+
 
 //Give the player a partial life
 void Game::gainLife()
@@ -286,9 +298,25 @@ void Game::death()
 }
 
 
+//
+void Game::spawnPowerup(GameObject * source, int type)
+{
+	//If type is -1, randomly set type.
+
+	//Spawn powerup based on type.
+
+	//Push it into the appropriate vector
+
+	return;
+}
+
+
+
 void Game::spawnProjectile(GameObject * source, bool air, int fireType)
 {
-	//Spawn the projectile
+	//Spawn the projectile dynamically
+
+	//Push it into the appropriate vector
 
 	return;
 }

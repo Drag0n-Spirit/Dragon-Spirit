@@ -1,8 +1,11 @@
 #include "pch.h"
 #include "Enemy.h"
+#include "Game.h"
 
 
-Enemy::Enemy()
+//Placeholder
+Enemy::Enemy(sf::Sprite face, float _xPos, float _yPos,
+	std::shared_ptr<Game> game) : GameObject(face, _xPos, _yPos, game)
 {
 }
 
@@ -16,7 +19,7 @@ int Enemy::getHit()
 {
 	if (hp <= 0) 
 	{ 
-		gamePtr->addScore(pointVal); 
+		gamePtr.get()->addScore(pointVal); 
 	}  
 
 	return hp;

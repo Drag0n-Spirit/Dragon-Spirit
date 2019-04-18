@@ -5,7 +5,7 @@
 class Enemy : public GameObject
 {
 public:
-	Enemy();
+	Enemy(sf::Sprite face, float _xPos, float _yPos, std::shared_ptr<Game> game);
 	~Enemy();
 
 	virtual int getHit();

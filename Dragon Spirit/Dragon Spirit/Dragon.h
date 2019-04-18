@@ -16,7 +16,6 @@ struct Power
 class Dragon : public GameObject
 {
 public:
-	Dragon();
 	Dragon(sf::Sprite, float, float, std::shared_ptr<Game>);
 	~Dragon();
 	
