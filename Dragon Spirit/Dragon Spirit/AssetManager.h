@@ -9,18 +9,25 @@ Update screen information.
 #include "PowerTypes.h"
 #include "SpawnData.h"
 #include "GameObject.h"
+#include "PowerUp.h"
+#include "Projectile.h"
 #include <iostream>
 #include <algorithm>
 #include <vector>
+#include <fstream>
+#include <string>
+
 
 class AssetManager
 {
 public:
-	AssetManager(std::vector<std::shared_ptr<GameObject>>, std::shared_ptr<Game>);
+	AssetManager(std::shared_ptr<Game>);
 	~AssetManager();
 
 	void sortSpawns(); //Quicksort SpawnData by spawnPoint value.
-	bool loadLevel(); //Loads a level from file, returning true if successful.
+
+	///Need to wait on when we work on level files.
+	bool loadLevel(int); //Loads a level from file, returning true if successful.
 	/*
 	How exactly will a level be stored?
 	We’ll have a vector of SpawnData structs for the enemies,

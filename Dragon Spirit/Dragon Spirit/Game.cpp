@@ -160,4 +160,9 @@ sf::Vector2u Game::getScreenDim()
 	return window->getSize();
 }
 
+std::vector<std::shared_ptr<GameObject>>* Game::getEntities()
+{
+	return groups;
+}
+
 

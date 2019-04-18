@@ -2,7 +2,7 @@
 
 #include <vector>
 #include <SFML\Graphics.hpp>
-
+#include "GameObject.h"
 
 class Game
 {
@@ -30,6 +30,7 @@ public:
 	void checkCollisions();
 
 	sf::Vector2u getScreenDim();
+	std::vector<std::shared_ptr<GameObject>>* getEntities();
 
 private:
 	enum GameState {
@@ -48,6 +49,6 @@ private:
 	int lives = 6;
 	int score = 0;
 	//AssetManager assetManager;
-	//vector<GameObject *> groups[10];
+	std::vector<std::shared_ptr<GameObject>> groups[10];
 };
 
