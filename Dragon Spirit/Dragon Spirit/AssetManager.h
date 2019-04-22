@@ -26,8 +26,9 @@ public:
 
 	void sortSpawns(); //Quicksort SpawnData by spawnPoint value.
 
-	///Need to wait on when we work on level files.
-	bool loadLevel(int); //Loads a level from file, returning true if successful.
+	//Takes an int that represents what level to load.
+	//Loads a level from file, returning true if successful.
+	bool loadLevel(int); 
 	/*
 	How exactly will a level be stored?
 	We’ll have a vector of SpawnData structs for the enemies,
@@ -39,8 +40,11 @@ public:
 	//Handles sprite updates depending on type and status of GameObject.
 	void updateSprite();
 
+	//Returns pointer to spawn data.
+	std::shared_ptr<std::vector<SpawnData>> getSpawnData();
+
 private:
-	std::vector<SpawnData> spawnData;
+	std::vector<SpawnData> entityTracker;
 	std::vector<int> checkpoints;
 
 	std::vector<std::shared_ptr<GameObject>> objects;

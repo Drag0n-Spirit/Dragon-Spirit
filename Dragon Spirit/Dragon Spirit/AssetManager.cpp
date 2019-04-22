@@ -38,11 +38,11 @@ int compare(const void* a, const void* b)
 void AssetManager::sortSpawns()
 {
 	//Only works if not empty
-	if (spawnData.size() > 0)
+	if (entityTracker.size() > 0)
 	{
 		//I'm going to try and use std::qsort() to sort spawnData.
 		//Sorts vector from beginning to end using the spawnPoint value.
-		std::qsort(&spawnData, sizeof(spawnData) , sizeof(spawnData.at(0)) , compare);
+		std::qsort(&entityTracker, sizeof(entityTracker) , sizeof(entityTracker.at(0)) , compare);
 
 	}	
 }
@@ -54,17 +54,39 @@ bool AssetManager::loadLevel(int level)
 	std::ifstream levelReader;
 	
 	std::string fileString;
-	fileString = "file" + level;
+	fileString = "level" + level;
 	fileString += ".txt";
 	levelReader.open(fileString.c_str());
 
 	if (levelReader.is_open())
 	{
 		std::string lineData;
+		SpawnData addEntity;
+		//Go through file and take each line as a string in lineData.
 		while (std::getline(levelReader, lineData))
 		{
-			//TODO: Figure out file method.
+			//Store points where we find commas because that seperates the data.
+			int parsingPoints[3];
+			parsingPoints[0] = lineData.find(",");
+			parsingPoints[1] = lineData.find(",", parsingPoints[0] + 1);
+			parsingPoints[2] = lineData.find(",", parsingPoints[1] + 1);
+
+			//Get a substring depending on the above comma positions which I then convert
+			//to a c string that is converted to an int with atoi().
+			addEntity.spawnPoint = std::atoi((lineData.substr(0, parsingPoints[0] - 1)).c_str());
+			//Do that for rest of SpawnData data.
+			addEntity.spawnPos.x = std::atoi(
+				(lineData.substr(parsingPoints[0] + 1,parsingPoints[1] - 1)).c_str());
+			addEntity.spawnPos.y = std::atoi(
+				(lineData.substr(parsingPoints[1] + 1, parsingPoints[2] - 1)).c_str());
+			addEntity.enemyType = std::atoi(
+				(lineData.substr(parsingPoints[2] + 1, lineData.at(lineData.length()))).c_str());
+
+			entityTracker.push_back(addEntity);
+
 		}
+		//Got to end of the file.
+		return true;
 	}
 	
 	return false;
@@ -114,4 +136,9 @@ void AssetManager::updateSprite()
 		
 
 	}
+}
+
+std::shared_ptr<std::vector<SpawnData>> AssetManager::getSpawnData()
+{
+	return std::shared_ptr<std::vector<SpawnData>>(&entityTracker);
 }

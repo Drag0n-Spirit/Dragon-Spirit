@@ -1,5 +1,4 @@
-﻿  pch.cpp
-  AssetManager.cpp
+﻿  AssetManager.cpp
   Dragon Spirit.cpp
 c:\users\19i9m01\documents\github\dragon-spirit\dragon spirit\dragon spirit\dragon spirit.cpp(38): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
           with
