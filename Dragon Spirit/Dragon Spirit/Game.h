@@ -43,6 +43,7 @@ public:
 	void gameOver();
 	void endScreen();
 	void run();
+	void pause(bool hasFocus = true);
 	void resize(sf::Event);
 	void addScore(unsigned int scoreBonus);
 	void checkForSpawns();

@@ -209,11 +209,13 @@ void Game::endScreen()
 //Handles pausing if game is in background, and calls functions based on gameState
 void Game::run()
 {
+	/*
 	//Pause/unpause - not working
 	if (event.type == sf::Event::LostFocus)
 		isPaused = true;
 	else if (event.type == sf::Event::GainedFocus)
 		isPaused = false;
+	*/
 
 	//Testing
 	std::cout << gameState << std::endl;
@@ -250,6 +252,22 @@ void Game::run()
 
 		//Display the window
 		window->display();
+	}
+
+	return;
+}
+
+
+//Pause the game, unless the game is paused and in the foreground, in which case
+//unpause it.
+void Game::pause(bool hasFocus)
+{
+	if (isPaused && hasFocus)
+		isPaused = false;
+	else
+	{
+		isPaused = true;
+		std::cout << "Paused" << std::endl;
 	}
 
 	return;
