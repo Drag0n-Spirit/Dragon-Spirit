@@ -84,6 +84,7 @@ sf::FloatRect GameObject::getHitbox()
 int GameObject::getHealth()
 {
 	return health;
+}
 
 sf::FloatRect GameObject::getHitbox()
 {
