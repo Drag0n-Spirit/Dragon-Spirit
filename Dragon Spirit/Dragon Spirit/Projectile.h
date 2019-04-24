@@ -5,9 +5,7 @@ class Projectile :
 {
 public:
 	//Needs a sprite, a position, and source of the projectile.
-	Projectile(sf::Sprite, sf::Vector2f,std::shared_ptr<Game>, std::shared_ptr<GameObject>);
-	//Needs a sprite, the x and y of a position as well as object that shoots.
-	Projectile(sf::Sprite, float, float,std::shared_ptr<Game>, std::shared_ptr<GameObject>);
+	Projectile(sf::Sprite,std::shared_ptr<Game>, std::shared_ptr<GameObject>);
 	~Projectile();
 
 	int getDamage();

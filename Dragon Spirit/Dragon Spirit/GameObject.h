@@ -1,7 +1,9 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include <math.h>
-#include "Game.h"
+//#include "Game.h"
+
+class Game;
 
 ///TODO: Comment this in depth at some point.
 

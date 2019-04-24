@@ -1,5 +1,6 @@
 #include "pch.h"
 #include "GameObject.h"
+#include "Game.h"
 
 
 GameObject::GameObject(sf::Sprite face, float x, float y, std::shared_ptr<Game> game)
@@ -23,6 +24,7 @@ GameObject::GameObject(sf::Sprite face, float x, float y, std::shared_ptr<Game> 
 	health = 1;
 }
 
+
 GameObject::GameObject(sf::Sprite face, sf::Vector2f pos, std::shared_ptr<Game> game)
 {
 	//Initialize values
@@ -41,9 +43,11 @@ GameObject::GameObject(sf::Sprite face, sf::Vector2f pos, std::shared_ptr<Game> 
 	gamePtr = game;
 }
 
+
 GameObject::~GameObject()
 {
 }
+
 
 void GameObject::update()
 {
@@ -54,6 +58,7 @@ void GameObject::update()
 	hitbox.move(velocity);
 	object.move(velocity);
 }
+
 
 void GameObject::collision(std::shared_ptr<GameObject> collisionObject)
 {
@@ -79,4 +84,14 @@ sf::FloatRect GameObject::getHitbox()
 int GameObject::getHealth()
 {
 	return health;
+
+sf::FloatRect GameObject::getHitbox()
+{
+	return hitbox.getGlobalBounds();
+}
+
+
+sf::Vector2f GameObject::getPosition()
+{
+	return position;
 }

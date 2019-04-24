@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "Dragon.h"
 #include <iostream>
 #include "SFML/Graphics.hpp"
@@ -6,15 +7,12 @@
 #include "PowerUp.h"
 #include "Enemy.h"
 #include "PowerTypes.h"
+#include "Game.h"
 
 
-Dragon::Dragon()
+Dragon::Dragon(sf::Sprite face, float _xPos, float _yPos,
+	std::shared_ptr<Game> game) : GameObject(face, _xPos, _yPos, game)
 {
-}
-Dragon::Dragon(int _xPos, int _yPos)
-{
-	position.x = _xPos;
-	position.y = _yPos;
 }
 Dragon::~Dragon()
 {
@@ -68,7 +66,8 @@ void Dragon::update()
 	if ((sf::Keyboard::isKeyPressed(sf::Keyboard::LControl) 
 		|| sf::Keyboard::isKeyPressed(sf::Keyboard::RControl)) && shotTimer == 0)
 	{
-		gamePtr->spawnProjectile(*this);
+		gamePtr.get()->spawnProjectile(dynamic_cast<GameObject *>(this), true,
+			fireType);
 		shotTimer = 15;
 	}
 
@@ -76,7 +75,7 @@ void Dragon::update()
 	if((sf::Keyboard::isKeyPressed(sf::Keyboard::LAlt) 
 		|| sf::Keyboard::isKeyPressed(sf::Keyboard::RAlt)) && shotTimer == 0)
 	{
-		gamePtr->spawnProjectile(*this, false);
+		gamePtr.get()->spawnProjectile(dynamic_cast<GameObject *>(this), false);
 		shotTimer = 15;
 	}
 	
@@ -90,12 +89,12 @@ void Dragon::update()
    of the documentation. */
 void Dragon::collision(std::shared_ptr<GameObject> obj)
 {
-	if ((dynamic_cast<Enemy *>(obj) != nullptr
-		|| dynamic_cast<Projectile *>(obj) != nullptr) && hitTimer == 0)
+	if ((dynamic_cast<Enemy *>(obj.get()) != nullptr
+		|| dynamic_cast<Projectile *>(obj.get()) != nullptr) && hitTimer == 0)
 		die(); // Subtract from health and make dragon invicible for some
 			   // amount of time
-	else if (dynamic_cast<PowerUp *>(obj) != nullptr)
-		powerUp(dynamic_cast<PowerUp *>(obj)); // Reward the player 
+	else if (dynamic_cast<PowerUp *>(obj.get()) != nullptr)
+		powerUp(dynamic_cast<PowerUp *>(obj.get())); // Reward the player 
 											   // for running into a power up.
 }
 
@@ -129,7 +128,7 @@ void Dragon::die()
 	powerDown(); // Powerups that are taken away when the dragon dies
 				 // should now be taken away.
 	if (hits == 0) // A life should be taken away from the dragon.
-		death();   // Reset to checkpoint.
+		gamePtr.get()->death();   // Reset to checkpoint.
 	else // The dragon still has time left to get to the next checkpoint.
 	{
 		hits--;
