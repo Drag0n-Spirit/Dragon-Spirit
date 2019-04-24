@@ -5,7 +5,8 @@
 Game::Game(sf::RenderWindow *_window)
 {
 	window = _window;
-
+	//Initialize asset manager.
+	assetManager = AssetManager(std::shared_ptr<Game>(this));
 }
 
 
@@ -59,6 +60,17 @@ void Game::running()
 	progress++;
 
 	//AssetManager checks for spawns here
+	//Iterates through spawn data.
+	for (unsigned i = 0; i < assetManager.getSpawnData()->size(); ++i)
+	{
+		//If the viewport's upper limit reaches the spawnPoint trigger in SpawnData.
+		if (assetManager.getSpawnData()->at(i).spawnPoint
+			== (view.getCenter().y - (getScreenDim().y / 2)))
+		{
+			//SpawnEnemy goes here.
+		}
+	}
+
 
 	//Draw the background to the window
 	//For each object, draw it to the window
