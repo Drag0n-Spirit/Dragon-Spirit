@@ -38,15 +38,20 @@
     </ClInclude>
 <<<<<<< HEAD
     <ClInclude Include="Enemy.h">
+=======
     <ClInclude Include="AssetManager.h">
+>>>>>>> Isaac-Makes-AssetManager
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SpawnData.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+<<<<<<< HEAD
     <ClInclude Include="ObjectNumber.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+=======
+>>>>>>> Isaac-Makes-AssetManager
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -70,8 +75,11 @@
     <ClCompile Include="Projectile.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+<<<<<<< HEAD
     <ClCompile Include="Enemy.cpp">
+=======
     <ClCompile Include="AssetManager.cpp">
+>>>>>>> Isaac-Makes-AssetManager
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

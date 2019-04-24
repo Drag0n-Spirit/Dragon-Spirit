@@ -70,9 +70,12 @@ sf::Vector2f GameObject::getPosition()
 	return position;
 }
 
+
 sf::FloatRect GameObject::getHitbox()
 {
 	return hitbox.getGlobalBounds();
+}
+
 int GameObject::getHealth()
 {
 	return health;

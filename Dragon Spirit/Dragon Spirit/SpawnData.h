@@ -1,11 +1,9 @@
 #pragma once
-
 #include "SFML/Graphics.hpp"
-
+#include <SFML/Graphics.hpp>
 
 // A struct that is shared between Game and AssetManager to control
 // what needs to be spawned where.
-#include <SFML/Graphics.hpp>
 
 struct SpawnData
 {
