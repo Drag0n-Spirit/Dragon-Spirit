@@ -52,6 +52,8 @@ public:
 	void spawnProjectile(GameObject * source, //the object that called the function
 		bool air = true, int fireType = 0);
 	void checkCollisions();
+	
+	
 private:
 	enum GameState {
 		_startScreen, _running, _bossFight, _animation,
@@ -68,6 +70,8 @@ private:
 	int progress = 0;
 	int lives = 6;
 	int score = 0;
+	sf::Sprite mapbackround;
+	sf::Texture maptexture;
 	//AssetManager assetManager;
 	std::vector<std::shared_ptr<GameObject>> groups[10];
 };

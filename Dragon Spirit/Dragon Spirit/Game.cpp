@@ -1,11 +1,12 @@
 #include "pch.h"
 #include "Game.h"
-
+#include <iostream>
 
 Game::Game(sf::RenderWindow *_window)
 {
 	window = _window;
 
+	view.reset(sf::FloatRect(50.f, 4200.f, 228.f, 224.f));
 }
 
 
@@ -15,6 +16,7 @@ Game::Game(sf::RenderWindow *_window, int _area)
 	window = _window;
 
 	area = _area;
+
 
 	//Spawn a dragon and give extra powers as appropriate
 }
@@ -79,6 +81,9 @@ void Game::startScreen()
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num1))
 		gameState = _animation;
 
+
+
+
 	return;
 }
 
@@ -86,6 +91,7 @@ void Game::startScreen()
 //
 void Game::running()
 {
+	
 	//Iterate through vector array, updating objects
 	for (int i = 0; i < 10; i++)
 	{
@@ -95,11 +101,8 @@ void Game::running()
 			//AssetManager needs to check the object here
 		}
 	}
-	//bad code that is deleted when asset manger is done
-	sf::Sprite Map;
-	sf::Texture maptexture;
-	maptexture.loadFromFile("Stage_1.png");
-	Map.setTexture(maptexture);
+	
+	
 
 
 
@@ -130,7 +133,16 @@ void Game::running()
 	}
 
 	if (progress == bossTime)
-		gameState = _bossFight;
+		gameState = _bossFight;	
+		
+	
+	maptexture.loadFromFile("Stage_1.png");
+	mapbackround.setTexture(maptexture);
+	mapbackround.setTextureRect(sf::IntRect(0, 0, 384, 4424));
+	mapbackround.setPosition(0, 0);
+	std::cout << "this is workin";
+
+	window->draw(mapbackround);
 
 	return;
 }
@@ -180,6 +192,14 @@ void Game::bossFight()
 void Game::animation()
 {
 	gameState = _running;
+	
+	
+	
+
+	//std::system("pause");
+
+
+
 
 	return;
 }
