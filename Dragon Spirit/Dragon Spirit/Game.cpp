@@ -116,7 +116,7 @@ void Game::running()
 
 	//Increment progress and scroll level
 	progress++;
-	view.move(0.f, -1.f);
+	view.move(0.f, -2.f);
 
 	//AssetManager checks for spawns here
 
