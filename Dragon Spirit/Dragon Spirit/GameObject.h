@@ -22,7 +22,6 @@ public:
 
 	int getHealth();
 
-
 protected:
 	std::shared_ptr<Game> gamePtr;
 

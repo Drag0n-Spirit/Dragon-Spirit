@@ -1,12 +1,13 @@
 #include "pch.h"
 #include "AssetManager.h"
+#include "Game.h"
 
 
 AssetManager::AssetManager(std::shared_ptr<Game> gamePointer)
 {
 	gamePtr = gamePointer;
 	std::vector<std::shared_ptr<GameObject>> * entitiesPointer;
-	entitiesPointer = gamePtr->getEntities();
+	entitiesPointer = gamePtr.get()->getEntities();
 	for (int i = 0; i < 10; ++i)
 	{
 		for (unsigned j = 0; j < entitiesPointer[i].size(); ++j)
@@ -99,7 +100,7 @@ void AssetManager::updateSprite()
 		//First check to see if object needs to die.
 		//Dies if its health is zero or it wanders off the bottom of the screen.
 		if (objects.at(i)->getHealth() <= 0 ||
-			objects.at(i)->getPosition().y > gamePtr->getScreenDim().y)
+			objects.at(i)->getPosition().y > gamePtr.get()->getScreenDim().y)
 		{
 			//Call deconstructor.
 			delete objects.at(i).get();

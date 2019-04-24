@@ -87,7 +87,6 @@ private:
 	int lives = 6;
 	int score = 0;
 	//AssetManager assetManager;
-	std::vector<GameObject *> groups[10];
 	std::vector<std::shared_ptr<GameObject>> groups[10];
 };
 

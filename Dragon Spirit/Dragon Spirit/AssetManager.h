@@ -17,6 +17,7 @@ Update screen information.
 #include <fstream>
 #include <string>
 
+class Game;
 
 class AssetManager
 {

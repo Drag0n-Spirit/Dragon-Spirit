@@ -65,33 +65,21 @@ void GameObject::collision(std::shared_ptr<GameObject> collisionObject)
 
 }
 
+
 sf::FloatRect GameObject::getHitbox()
 {
 	return hitbox.getGlobalBounds();
 }
+
 
 sf::Vector2f GameObject::getPosition()
 {
 	return position;
 }
 
-
-sf::FloatRect GameObject::getHitbox()
-{
-	return hitbox.getGlobalBounds();
-}
 
 int GameObject::getHealth()
 {
 	return health;
-
-sf::FloatRect GameObject::getHitbox()
-{
-	return hitbox.getGlobalBounds();
 }
 
-
-sf::Vector2f GameObject::getPosition()
-{
-	return position;
-}
