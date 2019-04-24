@@ -1,7 +1,9 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include <math.h>
-#include "Game.h"
+//#include "Game.h"
+
+class Game;
 
 class GameObject
 {
@@ -14,6 +16,10 @@ public:
 	virtual void collision(std::shared_ptr<GameObject>);
 
 	sf::FloatRect getHitbox();
+<<<<<<< HEAD
+=======
+	sf::Vector2f getPosition();
+>>>>>>> Nathanael-works-on-game
 
 protected:
 	std::shared_ptr<Game> gamePtr;

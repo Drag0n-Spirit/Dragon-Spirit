@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "Dragon.h"
 #include <iostream>
 #include "SFML/Graphics.hpp"
@@ -6,6 +7,7 @@
 #include "PowerUp.h"
 #include "Enemy.h"
 #include "PowerTypes.h"
+#include "Game.h"
 
 
 Dragon::Dragon(sf::Sprite face, float x, float y, std::shared_ptr<Game> game) : GameObject(face, x, y, game)
