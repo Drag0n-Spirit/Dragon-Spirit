@@ -3,6 +3,7 @@
 #include <vector>
 #include <SFML\Graphics.hpp>
 
+class GameObject;
 
 class Game
 {
@@ -28,6 +29,10 @@ public:
 	bool air = true, int fireType = 0);
 	*/
 	void checkCollisions();
+
+	sf::Vector2u getScreenDim();
+	std::vector<std::shared_ptr<GameObject>>* getEntities();
+
 private:
 	enum GameState {
 		_startScreen, _running, _bossFight, _animation,
@@ -46,5 +51,6 @@ private:
 	int score = 0;
 	//AssetManager assetManager;
 	std::vector<GameObject *> groups[10];
+	std::vector<std::shared_ptr<GameObject>> groups[10];
 };
 

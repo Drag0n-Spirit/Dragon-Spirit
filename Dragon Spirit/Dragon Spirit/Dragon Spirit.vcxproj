@@ -159,6 +159,7 @@
   <ItemGroup>
     <ClInclude Include="Dragon.h" />
     <ClInclude Include="Enemy.h" />
+    <ClInclude Include="AssetManager.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="ObjectNumber.h" />
@@ -169,6 +170,7 @@
     <ClInclude Include="SpawnData.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AssetManager.cpp" />
     <ClCompile Include="Dragon Spirit.cpp" />
     <ClCompile Include="Dragon.cpp" />
     <ClCompile Include="Enemy.cpp" />
