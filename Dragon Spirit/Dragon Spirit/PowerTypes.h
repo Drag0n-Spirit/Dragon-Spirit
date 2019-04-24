@@ -17,5 +17,6 @@ enum PowerTypes
 	Extend,
 	PowerDown,
 	Diamond,
-	Gold 
+	Gold,
+	POWERTYPES_SIZE
 };
