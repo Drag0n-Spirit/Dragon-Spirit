@@ -27,7 +27,6 @@ public:
 		OBJNUM_SIZE
 	};
 	Game(sf::RenderWindow *_window);
-	Game(sf::RenderWindow *_window, int _area);
 	~Game();
 
 	//Spawns a Projectile and adds it to groups vector.
@@ -44,6 +43,7 @@ public:
 	void gameOver();
 	void endScreen();
 	void run();
+	void resize(sf::Event);
 	void addScore(unsigned int scoreBonus);
 	void checkForSpawns();
 	void gainLife();
@@ -63,11 +63,21 @@ private:
 	sf::View view;
 	sf::Event event;
 	std::vector<int> checkpoints;
+
+	//Testing
+	sf::CircleShape shape;
+
+	sf::Sprite screen; 
+	sf::Texture screenTexture;
+	sf::Sprite levelBackground;
+	sf::Texture backgroundTexture;
+
 	bool isPaused = false;
 	int gameState = _startScreen;
 	int area = 0;
 	int bossTime;
-	int progress = 0;
+	int progress = 0; //Tracks overall progress throughout the level, in units.
+	int spawnCounter = 0;
 	int lives = 6;
 	int score = 0;
 	//AssetManager assetManager;

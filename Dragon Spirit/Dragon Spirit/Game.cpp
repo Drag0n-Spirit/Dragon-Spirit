@@ -6,17 +6,15 @@ Game::Game(sf::RenderWindow *_window)
 {
 	window = _window;
 
-}
-
-
-//Start at an area beyond the first
-Game::Game(sf::RenderWindow *_window, int _area)
-{
-	window = _window;
-
-	area = _area;
-
-	//Spawn a dragon and give extra powers as appropriate
+	if (!screenTexture.loadFromFile("0020.png"))
+	{
+		// error...
+		std::cout << "Error loading texture" << std::endl;
+	}
+	else
+	{
+		screen.setTexture(screenTexture);
+	}
 }
 
 
@@ -79,6 +77,8 @@ void Game::startScreen()
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num1))
 		gameState = _animation;
 
+	window->draw(screen);
+
 	return;
 }
 
@@ -104,9 +104,10 @@ void Game::running()
 
 	//Increment progress and scroll level
 	progress++;
-	view.move(0.f, -1.f);
+	view.move(0.f, -2.f);
 
 	//AssetManager checks for spawns here
+
 
 	//Draw the background to the window
 
@@ -122,6 +123,9 @@ void Game::running()
 			//AssetManager needs to draw the sprites to the window.
 		}
 	}
+
+	//TESTING
+	window->draw(shape);
 
 	if (progress == bossTime)
 		gameState = _bossFight;
@@ -173,6 +177,7 @@ void Game::bossFight()
 //
 void Game::animation()
 {
+	area++;
 	gameState = _running;
 
 	return;
@@ -204,7 +209,7 @@ void Game::endScreen()
 //Handles pausing if game is in background, and calls functions based on gameState
 void Game::run()
 {
-	//Pause/unpause
+	//Pause/unpause - not working
 	if (event.type == sf::Event::LostFocus)
 		isPaused = true;
 	else if (event.type == sf::Event::GainedFocus)
@@ -212,6 +217,8 @@ void Game::run()
 
 	//Testing
 	std::cout << gameState << std::endl;
+	shape.setRadius(100.f);
+	shape.setFillColor(sf::Color::Green);
 
 	//If not paused, do something based on the gameState
 	if (!isPaused)
@@ -244,6 +251,24 @@ void Game::run()
 		//Display the window
 		window->display();
 	}
+
+	return;
+}
+
+
+//Maintains ratio between window and view
+void Game::resize(sf::Event event)
+{
+	double wratio = (event.size.width / (float)event.size.height);
+	double vratio = (view.getSize().x) / (float)(view.getSize().y);
+
+	// window ratio vs view ratio
+	if (wratio > vratio)
+		view.setViewport(sf::FloatRect((1 - (vratio / wratio)) / 2.0,
+			0, (vratio / wratio), 1));
+	else
+		view.setViewport(sf::FloatRect(0, (1 - (wratio / vratio)) / 2.0,
+			1, (wratio / vratio)));
 
 	return;
 }
@@ -289,9 +314,8 @@ void Game::death()
 		//Kill all non-dragon GameObjects
 
 		//Set progress to nearest checkpoint
-		progress = checkpoints.at(checkpoints.size() - 1);
-
-		//
+		
+		//Set the spawnCounter to the nearest checkpoint
 
 	}
 
