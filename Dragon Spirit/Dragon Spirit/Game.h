@@ -52,6 +52,8 @@ public:
 	void spawnProjectile(GameObject * source, //the object that called the function
 		bool air = true, int fireType = 0);
 	void checkCollisions();
+
+	sf::Vector2f viewsize;
 	
 	
 private:

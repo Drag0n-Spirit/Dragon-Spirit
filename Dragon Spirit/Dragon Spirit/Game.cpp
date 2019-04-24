@@ -6,7 +6,7 @@ Game::Game(sf::RenderWindow *_window)
 {
 	window = _window;
 
-	view.reset(sf::FloatRect(50.f, 4200.f, 228.f, 224.f));
+	
 }
 
 
@@ -102,8 +102,11 @@ void Game::running()
 		}
 	}
 	
-	
+	if(sf::Keyboard::isKeyPressed(sf::Keyboard::Left)&&  viewsize.x/2 - view.getCenter().x < 0)
+		view.move(-3.f,0.f);
 
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right) && viewsize.x / 2 + view.getCenter().x < 384)
+		view.move(3.f, 0.f);
 
 
 	checkCollisions();
@@ -140,7 +143,6 @@ void Game::running()
 	mapbackround.setTexture(maptexture);
 	mapbackround.setTextureRect(sf::IntRect(0, 0, 384, 4424));
 	mapbackround.setPosition(0, 0);
-	std::cout << "this is workin";
 
 	window->draw(mapbackround);
 
@@ -192,8 +194,11 @@ void Game::bossFight()
 void Game::animation()
 {
 	gameState = _running;
-	
-	
+
+	viewsize.x = 228.f;
+	viewsize.y = 300.f;
+
+	view.reset(sf::FloatRect(viewsize.x/2, 4224.f - viewsize.y/3, viewsize.x, viewsize.y));
 	
 
 	//std::system("pause");
