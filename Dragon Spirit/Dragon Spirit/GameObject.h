@@ -16,15 +16,12 @@ public:
 	virtual void collision(std::shared_ptr<GameObject>);
 
 	sf::FloatRect getHitbox();
-<<<<<<< HEAD
-=======
 	sf::Vector2f getPosition();
->>>>>>> Nathanael-works-on-game
-
+	sf::Sprite object;
 protected:
 	std::shared_ptr<Game> gamePtr;
 
-	sf::Sprite object;
+	
 	sf::RectangleShape hitbox;
 	sf::Vector2f position;
 	sf::Vector2f velocity;

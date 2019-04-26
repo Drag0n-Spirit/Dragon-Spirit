@@ -12,6 +12,10 @@
 
 Dragon::Dragon(sf::Sprite face, float x, float y, std::shared_ptr<Game> game) : GameObject(face, x, y, game)
 {
+	/*sf::Texture textureTemp;
+	if (!textureTemp.loadFromFile("../flap 1.png"))
+		printf("Errors\n");
+	object.setTexture(textureTemp);*/
 }
 Dragon::~Dragon()
 {
@@ -22,7 +26,7 @@ Dragon::~Dragon()
 // the player has tried to fire a bullet.
 void Dragon::update()
 {
-	double movementSpeed = 1;
+	double movementSpeed = 5;
 
 	// Track the keyboard to see what the dragon should do.
 	//Up and down movement.
@@ -30,18 +34,20 @@ void Dragon::update()
 	{
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)
 			|| sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
-			velocity.y = movementSpeed / sqrt(2) * -1;
+			velocity.y = movementSpeed / sqrt(2) * -1 - 2;
 		else
-			velocity.y = movementSpeed * -1;
+			velocity.y = movementSpeed * -1 - 2;
 	}
 	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
 	{
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)
 			|| sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
-			velocity.y = movementSpeed / sqrt(2);
+			velocity.y = movementSpeed / sqrt(2) - 2;
 		else
-			velocity.y = movementSpeed;
+			velocity.y = movementSpeed - 2;
 	}
+	else
+		velocity.y = 0;
 
 	//Left and right movement.
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
@@ -60,12 +66,15 @@ void Dragon::update()
 		else
 			velocity.x = movementSpeed;
 	}
+	else
+		velocity.x = 0;
 
 	// Check if an air projectile needs to be spawned.
 	if ((sf::Keyboard::isKeyPressed(sf::Keyboard::LControl) 
 		|| sf::Keyboard::isKeyPressed(sf::Keyboard::RControl)) && shotTimer == 0)
 	{
-		//gamePtr->spawnProjectile(*this);
+		GameObject * obj = this;
+		gamePtr->spawnProjectile<Projectile>(object, std::shared_ptr<GameObject>(obj));
 		shotTimer = 15;
 	}
 

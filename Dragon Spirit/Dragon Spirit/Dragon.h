@@ -32,9 +32,7 @@ public:
 	int getFire();
 
 private:
-	int hits, heads, fire, hitTimer = 0, shotTimer = 0,
-		fireType;
-		fireType = 0;
+	int hits, heads, fire, hitTimer = 0, shotTimer = 0, fireType = 0;
 
 	std::vector<Power> powerups;
 };
