@@ -1,5 +1,6 @@
 #include "pch.h"
 #include "Game.h"
+#include "Dragon.h"
 
 
 Game::Game(sf::RenderWindow *_window)
@@ -15,6 +16,18 @@ Game::Game(sf::RenderWindow *_window)
 	{
 		screen.setTexture(screenTexture);
 	}
+
+	sf::Sprite obj;
+
+	sf::Texture textureTemp;
+	if (!textureTemp.loadFromFile("../flap 1.png"))
+		printf("Errors\n");
+	obj.setTexture(textureTemp);
+
+	Dragon * d = new Dragon(obj, 50., 50., std::shared_ptr<Game>(this));
+
+	groups[dragon].push_back(std::shared_ptr<Dragon>(d));
+		//sf::Sprite face, float x, float y, std::shared_ptr<Game> game
 }
 
 
@@ -126,6 +139,7 @@ void Game::running()
 
 	//TESTING
 	window->draw(shape);
+	window->draw(groups[dragon].at(0)->object);
 
 	if (progress == bossTime)
 		gameState = _bossFight;

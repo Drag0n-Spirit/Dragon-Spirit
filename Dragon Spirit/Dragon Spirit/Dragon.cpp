@@ -10,9 +10,12 @@
 #include "Game.h"
 
 
-Dragon::Dragon(sf::Sprite face, float _xPos, float _yPos,
-	std::shared_ptr<Game> game) : GameObject(face, _xPos, _yPos, game)
+Dragon::Dragon(sf::Sprite face, float x, float y, std::shared_ptr<Game> game) : GameObject(face, x, y, game)
 {
+	/*sf::Texture textureTemp;
+	if (!textureTemp.loadFromFile("../flap 1.png"))
+		printf("Errors\n");
+	object.setTexture(textureTemp);*/
 }
 Dragon::~Dragon()
 {
@@ -23,7 +26,7 @@ Dragon::~Dragon()
 // the player has tried to fire a bullet.
 void Dragon::update()
 {
-	double movementSpeed = 1;
+	double movementSpeed = 5;
 
 	// Track the keyboard to see what the dragon should do.
 	//Up and down movement.
@@ -31,18 +34,20 @@ void Dragon::update()
 	{
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)
 			|| sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
-			velocity.y = movementSpeed / sqrt(2) * -1;
+			velocity.y = movementSpeed / sqrt(2) * -1 - 2;
 		else
-			velocity.y = movementSpeed * -1;
+			velocity.y = movementSpeed * -1 - 2;
 	}
 	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
 	{
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)
 			|| sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
-			velocity.y = movementSpeed / sqrt(2);
+			velocity.y = movementSpeed / sqrt(2) - 2;
 		else
-			velocity.y = movementSpeed;
+			velocity.y = movementSpeed - 2;
 	}
+	else
+		velocity.y = 0;
 
 	//Left and right movement.
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
@@ -61,13 +66,15 @@ void Dragon::update()
 		else
 			velocity.x = movementSpeed;
 	}
+	else
+		velocity.x = 0;
 
 	// Check if an air projectile needs to be spawned.
 	if ((sf::Keyboard::isKeyPressed(sf::Keyboard::LControl) 
 		|| sf::Keyboard::isKeyPressed(sf::Keyboard::RControl)) && shotTimer == 0)
 	{
-		gamePtr.get()->spawnProjectile(dynamic_cast<GameObject *>(this), true,
-			fireType);
+		GameObject * obj = this;
+		gamePtr->spawnProjectile<Projectile>(object, std::shared_ptr<GameObject>(obj));
 		shotTimer = 15;
 	}
 
@@ -75,12 +82,20 @@ void Dragon::update()
 	if((sf::Keyboard::isKeyPressed(sf::Keyboard::LAlt) 
 		|| sf::Keyboard::isKeyPressed(sf::Keyboard::RAlt)) && shotTimer == 0)
 	{
-		gamePtr.get()->spawnProjectile(dynamic_cast<GameObject *>(this), false);
+		//gamePtr->spawnProjectile(*this, false);
 		shotTimer = 15;
 	}
 	
+	// increment timers.
 	if (hitTimer > 0) { hitTimer--; }
 	if (shotTimer > 0) { shotTimer--; }
+
+	//update position with velocity.
+	position.x += velocity.x;
+	position.y += velocity.y;
+
+	hitbox.move(velocity);
+	object.move(velocity);
 }
 
 
@@ -114,7 +129,38 @@ void Dragon::powerUp(PowerUp * powers)
 {
 	switch (powers->getValue())
 	{
-
+	case DragonHeads:
+		break;
+	case BlueEgg:
+		break;
+	case FirePower:
+		break;
+	case RedEgg:
+		break;
+	case MagicEye:
+		break;
+	case YellowEgg:
+		break;
+	case LongFire:
+		break;
+	case WideFire:
+		break;
+	case HomingFire:
+		break;
+	case SmallDragon:
+		break;
+	case Earthquake:
+		break;
+	case PowerWing:
+		break;
+	case Extend:
+		break;
+	case PowerDown:
+		break; 
+	case Diamond:
+		break;
+	case Gold:
+		break;
 	}
 }
 
@@ -128,7 +174,8 @@ void Dragon::die()
 	powerDown(); // Powerups that are taken away when the dragon dies
 				 // should now be taken away.
 	if (hits == 0) // A life should be taken away from the dragon.
-		gamePtr.get()->death();   // Reset to checkpoint.
+		//death();   // Reset to checkpoint.
+		std::cout << "die" << std::endl;
 	else // The dragon still has time left to get to the next checkpoint.
 	{
 		hits--;
