@@ -74,7 +74,7 @@ void Dragon::update()
 		|| sf::Keyboard::isKeyPressed(sf::Keyboard::RControl)) && shotTimer == 0)
 	{
 		GameObject * obj = this;
-		gamePtr->spawnProjectile<Projectile>(object, std::shared_ptr<GameObject>(obj));
+		//gamePtr->spawnProjectile<Projectile>(object, std::shared_ptr<GameObject>(obj));
 		shotTimer = 15;
 	}
 
