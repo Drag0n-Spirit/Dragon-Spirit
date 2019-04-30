@@ -218,13 +218,15 @@ void Game::run()
 	*/
 
 	//Testing
-	std::cout << gameState << std::endl;
 	shape.setRadius(100.f);
 	shape.setFillColor(sf::Color::Green);
 
 	//If not paused, do something based on the gameState
 	if (!isPaused)
 	{
+		//Testing
+		std::cout << gameState << std::endl;
+
 		//Clear window
 		window->clear();
 
@@ -340,11 +342,15 @@ void Game::death()
 	return;
 }
 
+
+//Get the dimensions of the screen
 sf::Vector2u Game::getScreenDim()
 {
 	return window->getSize();
 }
 
+
+//Get the vector of gameObjects
 std::vector<std::shared_ptr<GameObject>>* Game::getEntities()
 {
 	return groups;
