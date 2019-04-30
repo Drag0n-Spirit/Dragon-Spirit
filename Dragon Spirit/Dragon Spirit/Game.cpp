@@ -154,10 +154,18 @@ void Game::running()
 		
 	
 	
-
 	window->draw(mapbackround);
 
+	if (progress == bossTime)
+		gameState = _bossFight;
+
+	if (progress > (4424 - viewsize.y) / 0.5)
+		gameState = _bossFight;
+
+	std::cout << " progress:  " << progress << std::endl;
 	return;
+
+
 }
 
 
