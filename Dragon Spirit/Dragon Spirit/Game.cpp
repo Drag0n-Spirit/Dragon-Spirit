@@ -32,11 +32,11 @@ template <typename type> std::shared_ptr<type> Game::spawnProjectile(sf::Sprite 
 	std::shared_ptr<type> thing(nullptr);
 	std::string name = typeid(type).name();
 
-	thing = std::make_shared<type>(face, this, obj);
+	thing = std::make_shared<type>(face, this);
 
 	for (int i = 0; i < OBJNUM_SIZE; i++)
 		if (i == name)
-			groups[i].push_back(thing);
+			groups[i].push_back(thing, groups[dragon]->at(0));
 
 	return thing;
 }
