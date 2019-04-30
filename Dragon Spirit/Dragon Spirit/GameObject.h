@@ -28,6 +28,11 @@ protected:
 	int health;
 
 	sf::Sprite object;
+	sf::Sprite object;
+protected:
+	std::shared_ptr<Game> gamePtr;
+
+	
 	sf::RectangleShape hitbox;
 	sf::Vector2f position;
 	sf::Vector2f velocity;

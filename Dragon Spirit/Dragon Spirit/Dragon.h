@@ -16,7 +16,7 @@ struct Power
 class Dragon : public GameObject
 {
 public:
-	Dragon(sf::Sprite, float, float, std::shared_ptr<Game>);
+	Dragon(sf::Sprite face, float x, float y, std::shared_ptr<Game> game);
 	~Dragon();
 	
 	void update();
@@ -32,8 +32,7 @@ public:
 	int getFire();
 
 private:
-	int hits, heads, fire, hitTimer = 0, shotTimer = 0,
-		fireType = 0;
+	int hits, heads, fire, hitTimer = 0, shotTimer = 0, fireType = 0;
 
 	std::vector<Power> powerups;
 };
