@@ -2,6 +2,7 @@
 #include "Game.h"
 #include "Dragon.h"
 
+#include <iostream>
 
 Game::Game(sf::RenderWindow *_window)
 {
@@ -16,6 +17,8 @@ Game::Game(sf::RenderWindow *_window)
 	{
 		screen.setTexture(screenTexture);
 	}
+	
+}
 
 	sf::Sprite obj;
 
@@ -28,6 +31,8 @@ Game::Game(sf::RenderWindow *_window)
 
 	groups[dragon].push_back(std::shared_ptr<Dragon>(d));
 		//sf::Sprite face, float x, float y, std::shared_ptr<Game> game
+
+	//Spawn a dragon and give extra powers as appropriate
 }
 
 
@@ -92,6 +97,8 @@ void Game::startScreen()
 
 	window->draw(screen);
 
+
+
 	return;
 }
 
@@ -99,6 +106,7 @@ void Game::startScreen()
 //
 void Game::running()
 {
+	
 	//Iterate through vector array, updating objects
 	for (int i = 0; i < 10; i++)
 	{
@@ -109,6 +117,12 @@ void Game::running()
 		}
 	}
 	
+	if(sf::Keyboard::isKeyPressed(sf::Keyboard::Left)&&  viewsize.x/2 - view.getCenter().x < 0)
+		view.move(-3.f,0.f);
+
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right) && viewsize.x / 2 + view.getCenter().x < 384)
+		view.move(3.f, 0.f);
+
 
 	checkCollisions();
 
@@ -142,7 +156,15 @@ void Game::running()
 	window->draw(groups[dragon].at(0)->object);
 
 	if (progress == bossTime)
-		gameState = _bossFight;
+		gameState = _bossFight;	
+		
+	
+	maptexture.loadFromFile("Stage_1.png");
+	mapbackround.setTexture(maptexture);
+	mapbackround.setTextureRect(sf::IntRect(0, 0, 384, 4424));
+	mapbackround.setPosition(0, 0);
+
+	window->draw(mapbackround);
 
 	return;
 }
@@ -193,6 +215,17 @@ void Game::animation()
 {
 	area++;
 	gameState = _running;
+
+	viewsize.x = 228.f;
+	viewsize.y = 300.f;
+
+	view.reset(sf::FloatRect(viewsize.x/2, 4224.f - viewsize.y/3, viewsize.x, viewsize.y));
+	
+
+	//std::system("pause");
+
+
+
 
 	return;
 }

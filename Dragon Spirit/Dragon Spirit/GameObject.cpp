@@ -65,6 +65,11 @@ void GameObject::collision(std::shared_ptr<GameObject> collisionObject)
 
 }
 
+void GameObject::change_texture(sf::Texture image)
+{
+	texture.update(image);
+}
+
 
 sf::FloatRect GameObject::getHitbox()
 {
