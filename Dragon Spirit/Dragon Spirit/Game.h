@@ -60,6 +60,9 @@ public:
 	sf::Vector2u getScreenDim();
 	std::vector<std::shared_ptr<GameObject>>* getEntities();
 
+	sf::Vector2f viewsize;
+	
+	
 private:
 	enum GameState {
 		_startScreen, _running, _bossFight, _animation,
@@ -86,6 +89,8 @@ private:
 	int spawnCounter = 0;
 	int lives = 6;
 	int score = 0;
+	sf::Sprite mapbackround;
+	sf::Texture maptexture;
 	//AssetManager assetManager;
 	std::vector<std::shared_ptr<GameObject>> groups[OBJNUM_SIZE];
 };
