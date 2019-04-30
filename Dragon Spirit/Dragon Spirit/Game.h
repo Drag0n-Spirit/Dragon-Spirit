@@ -2,15 +2,13 @@
 
 #include <vector>
 #include <SFML\Graphics.hpp>
-<<<<<<< HEAD
 #include "AssetManager.h"
-=======
 #include "PowerTypes.h"
 #include "GameObject.h"
 #include "PowerUp.h"
 #include "Projectile.h"
 #include <iostream>
->>>>>>> master
+
 
 class GameObject;
 

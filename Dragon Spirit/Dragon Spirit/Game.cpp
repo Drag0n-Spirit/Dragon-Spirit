@@ -43,8 +43,8 @@ template <typename type> std::shared_ptr<type> Game::spawnProjectile(sf::Sprite 
 	return thing;
 }
 
-
-/*template <typename type> std::shared_ptr<type> Game::spawnEnemy(sf::Sprite face, sf::Vector2f pos)
+/*
+template <typename type> std::shared_ptr<type> Game::spawnEnemy(sf::Sprite face, sf::Vector2f pos)
 {
 	std::shared_ptr<type> thing(nullptr);
 	std::string name = typeid(type).name();
@@ -56,8 +56,8 @@ template <typename type> std::shared_ptr<type> Game::spawnProjectile(sf::Sprite 
 			groups[i].push_back(thing);
 
 	return thing;
-};*/
-
+};
+*/
 
 //Spawns a Powerup and adds it to groups vector.
 template <typename type> std::shared_ptr<type> Game::spawnPowerup(sf::Sprite face, sf::Vector2f pos)
@@ -113,16 +113,22 @@ void Game::running()
 
 	//AssetManager checks for spawns here
 	//Iterates through spawn data.
+	/*
 	for (unsigned i = 0; i < assetManager.getSpawnData()->size(); ++i)
 	{
 		//If the viewport's upper limit reaches the spawnPoint trigger in SpawnData.
 		if (assetManager.getSpawnData()->at(i).spawnPoint
 			== (view.getCenter().y - (getScreenDim().y / 2)))
 		{
-			//SpawnEnemy goes here.
+			//Resolve enemy type
+			switch (assetManager.getSpawnData()->at(i).enemyType)
+			{
+				//convert enemy type into resolvable enemy subclass and spawn it.
+
+			}
 		}
 	}
-
+	*/
 
 
 	//Draw the background to the window
