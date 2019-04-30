@@ -20,21 +20,6 @@ Game::Game(sf::RenderWindow *_window)
 	
 }
 
-	sf::Sprite obj;
-
-	sf::Texture textureTemp;
-	if (!textureTemp.loadFromFile("../flap 1.png"))
-		printf("Errors\n");
-	obj.setTexture(textureTemp);
-
-	Dragon * d = new Dragon(obj, 50., 50., std::shared_ptr<Game>(this));
-
-	groups[dragon].push_back(std::shared_ptr<Dragon>(d));
-		//sf::Sprite face, float x, float y, std::shared_ptr<Game> game
-
-	//Spawn a dragon and give extra powers as appropriate
-}
-
 
 Game::~Game()
 {
@@ -153,7 +138,7 @@ void Game::running()
 
 	//TESTING
 	window->draw(shape);
-	window->draw(groups[dragon].at(0)->object);
+	//window->draw(groups[dragon].at(0)->object);
 
 	if (progress == bossTime)
 		gameState = _bossFight;	
