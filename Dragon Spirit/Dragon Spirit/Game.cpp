@@ -18,15 +18,6 @@ Game::Game(sf::RenderWindow *_window)
 		screen.setTexture(screenTexture);
 	}
 	
-	viewsize.x = 228.f;
-	viewsize.y = 300.f;
-
-	view.reset(sf::FloatRect(viewsize.x / 2, 4224.f - viewsize.y / 3, viewsize.x, viewsize.y));
-
-	maptexture.loadFromFile("Stage_1.png");
-	mapbackround.setTexture(maptexture);
-	mapbackround.setTextureRect(sf::IntRect(0, 0, 384, 4424));
-	mapbackround.setPosition(0, 0);
 }
 
 
@@ -112,10 +103,10 @@ void Game::running()
 	}
 	
 	if(sf::Keyboard::isKeyPressed(sf::Keyboard::Left)&&  viewsize.x/2 - view.getCenter().x < 0)
-		view.move(-1.f,0.f);
+		view.move(-3.f,0.f);
 
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right) && viewsize.x / 2 + view.getCenter().x < 384)
-		view.move(1.f, 0.f);
+		view.move(3.f, 0.f);
 
 
 	checkCollisions();
@@ -125,7 +116,7 @@ void Game::running()
 
 	//Increment progress and scroll level
 	progress++;
-	view.move(0.f, -0.5);
+	view.move(0.f, -2.f);
 
 	//AssetManager checks for spawns here
 
@@ -155,7 +146,15 @@ void Game::running()
 		gameState = _bossFight;	
 		
 	
+<<<<<<< HEAD
 	
+=======
+	maptexture.loadFromFile("Stage_1.png");
+	mapbackround.setTexture(maptexture);
+	mapbackround.setTextureRect(sf::IntRect(0, 0, 384, 4424));
+	mapbackround.setPosition(0, 0);
+
+>>>>>>> parent of 6f94cf4... time
 	window->draw(mapbackround);
 
 	//window->draw(groups[dragon].at(0)->);
@@ -220,7 +219,10 @@ void Game::animation()
 	area++;
 	gameState = _running;
 
-	
+	viewsize.x = 228.f;
+	viewsize.y = 300.f;
+
+	view.reset(sf::FloatRect(viewsize.x/2, 4224.f - viewsize.y/3, viewsize.x, viewsize.y));
 	
 
 	//std::system("pause");
