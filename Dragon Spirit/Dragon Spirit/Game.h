@@ -93,9 +93,9 @@ private:
 	int score = 0;
 	sf::Sprite mapbackround;
 	sf::Texture maptexture;
-	//AssetManager assetManager;
-	std::vector<std::shared_ptr<GameObject>> groups[OBJNUM_SIZE];
 	AssetManager assetManager;
+	std::vector<std::shared_ptr<GameObject>> groups[OBJNUM_SIZE];
+	//AssetManager assetManager;
 	std::vector<GameObject *> groups[10];
 	std::vector<std::shared_ptr<GameObject>> groups[10];
 };

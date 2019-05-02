@@ -21,6 +21,7 @@ Game::Game(sf::RenderWindow *_window)
 	{
 		screen.setTexture(screenTexture);
 	}
+
 	
 	viewsize.x = 228.f;
 	viewsize.y = 300.f;
@@ -31,6 +32,7 @@ Game::Game(sf::RenderWindow *_window)
 	mapbackround.setTexture(maptexture);
 	mapbackround.setTextureRect(sf::IntRect(0, 0, 384, 4424));
 	mapbackround.setPosition(0, 0);
+
 }
 
 
