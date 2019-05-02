@@ -148,6 +148,7 @@ void Game::running()
 	
 <<<<<<< HEAD
 
+>>>>>>> parent of 6f94cf4... time
 =======
 >>>>>>> parent of 6f94cf4... time
 	maptexture.loadFromFile("Stage_1.png");
@@ -156,6 +157,7 @@ void Game::running()
 	mapbackround.setPosition(0, 0);
 <<<<<<< HEAD
 
+>>>>>>> parent of 6f94cf4... time
 =======
 >>>>>>> parent of 6f94cf4... time
 
