@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿  Game.cpp
 c:\users\20kl01\desktop\new folder\dragon-spirit\dragon spirit\dragon spirit\game.cpp(98): warning C4018: '<': signed/unsigned mismatch
 c:\users\20kl01\desktop\new folder\dragon-spirit\dragon spirit\dragon spirit\game.cpp(132): warning C4018: '<': signed/unsigned mismatch
@@ -33,3 +34,6 @@ c:\users\20kl01\desktop\new folder\dragon-spirit\dragon spirit\dragon spirit\gam
 c:\users\20kl01\desktop\new folder\dragon-spirit\dragon spirit\dragon spirit\game.cpp(484): warning C4018: '<': signed/unsigned mismatch
 c:\users\20kl01\desktop\new folder\dragon-spirit\dragon spirit\dragon spirit\game.cpp(495): warning C4018: '<': signed/unsigned mismatch
 c:\users\20kl01\desktop\new folder\dragon-spirit\dragon spirit\dragon spirit\game.cpp(498): warning C4018: '<': signed/unsigned mismatch
+=======
+﻿  Dragon Spirit.vcxproj -> C:\Users\20KL01\Desktop\New folder\Dragon-Spirit\Dragon Spirit\Debug\Dragon Spirit.exe
+>>>>>>> parent of 6f94cf4... time
