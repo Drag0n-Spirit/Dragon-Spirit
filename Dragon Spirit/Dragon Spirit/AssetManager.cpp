@@ -108,31 +108,43 @@ void AssetManager::updateSprite()
 			objects.erase(objects.begin() + i);
 		}
 
+		sf::Sprite placeholder = sf::Sprite();
+		sf::Texture texturePlaceholder = sf::Texture();
+
+		texturePlaceholder.create(objects.at(i)->getHitbox.width, objects.at(i)->getHitbox().height);
+		placeholder.setTexture(texturePlaceholder);
+		placeholder.setPosition(objects.at(i)->getPosition());
+		placeholder.setOrigin(objects.at(i)->getPosition());
+
 		///Stuff will go here when all subclasses of GameObject are done.
 		if (dynamic_cast<PowerUp*>(objects.at(i).get()) != nullptr)
 		{
-
+			placeholder.setColor(sf::Color::Blue);
+			objects.at(i)->setSprite(placeholder);
 		}
-		/* WIP
-		else if (dynamic_cast<Enemy*>(objects.at(i)) != nullptr)
+		else if (dynamic_cast<Enemy*>(objects.at(i).get()) != nullptr)
 		{
-
+			placeholder.setColor(sf::Color::Red);
+			objects.at(i)->setSprite(placeholder);
 		}
-		else if (dynamic_cast<Dragon*>(objects.at(i)) != nullptr)
+		else if (dynamic_cast<Dragon*>(objects.at(i).get()) != nullptr)
 		{
-
+			placeholder.setColor(sf::Color::Green);
+			objects.at(i)->setSprite(placeholder);
 		}
 		else if (dynamic_cast<Projectile*>(objects.at(i).get()) != nullptr)
 		{
-
+			placeholder.setColor(sf::Color::Yellow);
+			objects.at(i)->setSprite(placeholder);
 		}
-		*/
 		else
 		{
+			/*
 			//Throw error if type of object is not found.
 			std::cout << "Error in handling sprite updates at position " << i << " in Address "
 				<< objects.at(i).get() << std::endl;
 			throw "Couldn't find type of GameObject when processing sprites.";
+			*/
 		}
 		
 

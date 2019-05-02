@@ -2,11 +2,13 @@
 
 #include <vector>
 #include <SFML\Graphics.hpp>
+#include "AssetManager.h"
 #include "PowerTypes.h"
 #include "GameObject.h"
 #include "PowerUp.h"
 #include "Projectile.h"
 #include <iostream>
+
 
 class GameObject;
 
@@ -93,5 +95,8 @@ private:
 	sf::Texture maptexture;
 	//AssetManager assetManager;
 	std::vector<std::shared_ptr<GameObject>> groups[OBJNUM_SIZE];
+	AssetManager assetManager;
+	std::vector<GameObject *> groups[10];
+	std::vector<std::shared_ptr<GameObject>> groups[10];
 };
 

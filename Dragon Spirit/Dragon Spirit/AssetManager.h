@@ -10,6 +10,8 @@ Update screen information.
 #include "SpawnData.h"
 #include "GameObject.h"
 #include "PowerUp.h"
+#include "Enemy.h"
+#include "Dragon.h"
 #include "Projectile.h"
 #include <iostream>
 #include <algorithm>

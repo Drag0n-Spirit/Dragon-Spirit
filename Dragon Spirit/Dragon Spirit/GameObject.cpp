@@ -76,6 +76,15 @@ sf::FloatRect GameObject::getHitbox()
 	return hitbox.getGlobalBounds();
 }
 
+int GameObject::getHealth()
+{
+	return health;
+}
+
+void GameObject::setSprite(sf::Sprite face)
+{
+	object = face;
+}
 
 sf::Vector2f GameObject::getPosition()
 {

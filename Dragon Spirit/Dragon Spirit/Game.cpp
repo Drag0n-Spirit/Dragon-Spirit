@@ -8,6 +8,10 @@ Game::Game(sf::RenderWindow *_window)
 {
 	window = _window;
 
+	//Initialize asset manager.
+	assetManager = AssetManager(std::shared_ptr<Game>(this));
+
+
 	if (!screenTexture.loadFromFile("0020.png"))
 	{
 		// error...
@@ -50,8 +54,8 @@ template <typename type> std::shared_ptr<type> Game::spawnProjectile(sf::Sprite 
 	return thing;
 }
 
-
-/*template <typename type> std::shared_ptr<type> Game::spawnEnemy(sf::Sprite face, sf::Vector2f pos)
+/*
+template <typename type> std::shared_ptr<type> Game::spawnEnemy(sf::Sprite face, sf::Vector2f pos)
 {
 	std::shared_ptr<type> thing(nullptr);
 	std::string name = typeid(type).name();
@@ -63,8 +67,8 @@ template <typename type> std::shared_ptr<type> Game::spawnProjectile(sf::Sprite 
 			groups[i].push_back(thing);
 
 	return thing;
-};*/
-
+};
+*/
 
 //Spawns a Powerup and adds it to groups vector.
 template <typename type> std::shared_ptr<type> Game::spawnPowerup(sf::Sprite face, sf::Vector2f pos)
@@ -128,6 +132,23 @@ void Game::running()
 	view.move(0.f, -0.5);
 
 	//AssetManager checks for spawns here
+	//Iterates through spawn data.
+	/*
+	for (unsigned i = 0; i < assetManager.getSpawnData()->size(); ++i)
+	{
+		//If the viewport's upper limit reaches the spawnPoint trigger in SpawnData.
+		if (assetManager.getSpawnData()->at(i).spawnPoint
+			== (view.getCenter().y - (getScreenDim().y / 2)))
+		{
+			//Resolve enemy type
+			switch (assetManager.getSpawnData()->at(i).enemyType)
+			{
+				//convert enemy type into resolvable enemy subclass and spawn it.
+
+			}
+		}
+	}
+	*/
 
 
 	//Draw the background to the window
@@ -346,9 +367,16 @@ void Game::addScore(unsigned int scoreBonus)
 void Game::checkForSpawns()
 {
 	//Compare progress to AssetManager's vector.
+	for (unsigned i = 0; i < assetManager.getSpawnData()->size(); ++i)
+	{
+		//If the viewport's upper limit reaches the spawnPoint trigger in SpawnData.
+		if (assetManager.getSpawnData()->at(i).spawnPoint
+			== (view.getCenter().y - (getScreenDim().y / 2)))
+		{
+			//spawn and step forwards in the vector
+		}
+	}
 
-	//While spawn found in vector at progress, 
-	//spawn and step forwards in the vector
 
 	return;
 }

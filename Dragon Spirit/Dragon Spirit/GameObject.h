@@ -22,6 +22,8 @@ public:
 
 	int getHealth();
 
+	void setSprite(sf::Sprite);
+
 protected:
 	std::shared_ptr<Game> gamePtr;
 
