@@ -146,18 +146,13 @@ void Game::running()
 		gameState = _bossFight;	
 		
 	
-<<<<<<< HEAD
-<<<<<<< HEAD
-	
-=======
-=======
->>>>>>> parent of 6f94cf4... time
+
 	maptexture.loadFromFile("Stage_1.png");
 	mapbackround.setTexture(maptexture);
 	mapbackround.setTextureRect(sf::IntRect(0, 0, 384, 4424));
 	mapbackround.setPosition(0, 0);
 
->>>>>>> parent of 6f94cf4... time
+
 	window->draw(mapbackround);
 
 	//window->draw(groups[dragon].at(0)->);
