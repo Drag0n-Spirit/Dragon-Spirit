@@ -1,42 +1,35 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 ﻿  Game.cpp
 c:\users\20kl01\desktop\new folder\dragon-spirit\dragon spirit\dragon spirit\game.cpp(98): warning C4018: '<': signed/unsigned mismatch
 c:\users\20kl01\desktop\new folder\dragon-spirit\dragon spirit\dragon spirit\game.cpp(132): warning C4018: '<': signed/unsigned mismatch
-c:\users\20kl01\desktop\new folder\dragon-spirit\dragon spirit\dragon spirit\game.cpp(180): warning C4018: '<': signed/unsigned mismatch
-c:\users\20kl01\desktop\new folder\dragon-spirit\dragon spirit\dragon spirit\game.cpp(200): warning C4018: '<': signed/unsigned mismatch
-c:\users\20kl01\desktop\new folder\dragon-spirit\dragon spirit\dragon spirit\game.cpp(336): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+c:\users\20kl01\desktop\new folder\dragon-spirit\dragon spirit\dragon spirit\game.cpp(149): error C2059: syntax error: '<<'
+c:\users\20kl01\desktop\new folder\dragon-spirit\dragon spirit\dragon spirit\game.cpp(160): error C2059: syntax error: '<<'
+c:\users\20kl01\desktop\new folder\dragon-spirit\dragon spirit\dragon spirit\game.cpp(192): warning C4018: '<': signed/unsigned mismatch
+c:\users\20kl01\desktop\new folder\dragon-spirit\dragon spirit\dragon spirit\game.cpp(212): warning C4018: '<': signed/unsigned mismatch
+c:\users\20kl01\desktop\new folder\dragon-spirit\dragon spirit\dragon spirit\game.cpp(348): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
           with
           [
               T=float
           ]
-c:\users\20kl01\desktop\new folder\dragon-spirit\dragon spirit\dragon spirit\game.cpp(335): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+c:\users\20kl01\desktop\new folder\dragon-spirit\dragon spirit\dragon spirit\game.cpp(347): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
           with
           [
               T=float
           ]
-c:\users\20kl01\desktop\new folder\dragon-spirit\dragon spirit\dragon spirit\game.cpp(339): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+c:\users\20kl01\desktop\new folder\dragon-spirit\dragon spirit\dragon spirit\game.cpp(351): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
           with
           [
               T=float
           ]
-c:\users\20kl01\desktop\new folder\dragon-spirit\dragon spirit\dragon spirit\game.cpp(338): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+c:\users\20kl01\desktop\new folder\dragon-spirit\dragon spirit\dragon spirit\game.cpp(350): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
           with
           [
               T=float
           ]
-c:\users\20kl01\desktop\new folder\dragon-spirit\dragon spirit\dragon spirit\game.cpp(439): warning C4018: '<': signed/unsigned mismatch
-c:\users\20kl01\desktop\new folder\dragon-spirit\dragon spirit\dragon spirit\game.cpp(442): warning C4018: '<': signed/unsigned mismatch
-c:\users\20kl01\desktop\new folder\dragon-spirit\dragon spirit\dragon spirit\game.cpp(450): warning C4018: '<': signed/unsigned mismatch
-c:\users\20kl01\desktop\new folder\dragon-spirit\dragon spirit\dragon spirit\game.cpp(458): warning C4018: '<': signed/unsigned mismatch
-c:\users\20kl01\desktop\new folder\dragon-spirit\dragon spirit\dragon spirit\game.cpp(469): warning C4018: '<': signed/unsigned mismatch
-c:\users\20kl01\desktop\new folder\dragon-spirit\dragon spirit\dragon spirit\game.cpp(472): warning C4018: '<': signed/unsigned mismatch
-c:\users\20kl01\desktop\new folder\dragon-spirit\dragon spirit\dragon spirit\game.cpp(483): warning C4018: '<': signed/unsigned mismatch
-c:\users\20kl01\desktop\new folder\dragon-spirit\dragon spirit\dragon spirit\game.cpp(486): warning C4018: '<': signed/unsigned mismatch
-  Dragon Spirit.vcxproj -> C:\Users\20KL01\Desktop\New folder\Dragon-Spirit\Dragon Spirit\Debug\Dragon Spirit.exe
-=======
-﻿  Dragon Spirit.vcxproj -> C:\Users\20KL01\Desktop\New folder\Dragon-Spirit\Dragon Spirit\Debug\Dragon Spirit.exe
->>>>>>> parent of 6f94cf4... time
-=======
-﻿  Dragon Spirit.vcxproj -> C:\Users\20KL01\Desktop\New folder\Dragon-Spirit\Dragon Spirit\Debug\Dragon Spirit.exe
->>>>>>> parent of 6f94cf4... time
+c:\users\20kl01\desktop\new folder\dragon-spirit\dragon spirit\dragon spirit\game.cpp(451): warning C4018: '<': signed/unsigned mismatch
+c:\users\20kl01\desktop\new folder\dragon-spirit\dragon spirit\dragon spirit\game.cpp(454): warning C4018: '<': signed/unsigned mismatch
+c:\users\20kl01\desktop\new folder\dragon-spirit\dragon spirit\dragon spirit\game.cpp(462): warning C4018: '<': signed/unsigned mismatch
+c:\users\20kl01\desktop\new folder\dragon-spirit\dragon spirit\dragon spirit\game.cpp(470): warning C4018: '<': signed/unsigned mismatch
+c:\users\20kl01\desktop\new folder\dragon-spirit\dragon spirit\dragon spirit\game.cpp(481): warning C4018: '<': signed/unsigned mismatch
+c:\users\20kl01\desktop\new folder\dragon-spirit\dragon spirit\dragon spirit\game.cpp(484): warning C4018: '<': signed/unsigned mismatch
+c:\users\20kl01\desktop\new folder\dragon-spirit\dragon spirit\dragon spirit\game.cpp(495): warning C4018: '<': signed/unsigned mismatch
+c:\users\20kl01\desktop\new folder\dragon-spirit\dragon spirit\dragon spirit\game.cpp(498): warning C4018: '<': signed/unsigned mismatch
