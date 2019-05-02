@@ -147,7 +147,9 @@ void Game::running()
 		
 	
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
 >>>>>>> parent of 6f94cf4... time
 =======
 >>>>>>> parent of 6f94cf4... time
@@ -156,7 +158,9 @@ void Game::running()
 	mapbackround.setTextureRect(sf::IntRect(0, 0, 384, 4424));
 	mapbackround.setPosition(0, 0);
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
 >>>>>>> parent of 6f94cf4... time
 =======
 >>>>>>> parent of 6f94cf4... time
