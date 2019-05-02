@@ -147,8 +147,11 @@ void Game::running()
 		
 	
 <<<<<<< HEAD
+<<<<<<< HEAD
 	
 =======
+=======
+>>>>>>> parent of 6f94cf4... time
 	maptexture.loadFromFile("Stage_1.png");
 	mapbackround.setTexture(maptexture);
 	mapbackround.setTextureRect(sf::IntRect(0, 0, 384, 4424));
