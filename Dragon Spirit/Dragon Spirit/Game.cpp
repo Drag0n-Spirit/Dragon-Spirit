@@ -148,6 +148,7 @@ void Game::running()
 	//TESTING
 	shape.setPosition(groups[dragon].at(0)->getPosition());
 	window->draw(shape);
+
 	//window->draw(groups[dragon].at(0)->object);
 
 	if (progress == bossTime)
@@ -156,7 +157,9 @@ void Game::running()
 	
 	
 	window->draw(mapbackround);
+
 	//window->draw(groups[dragon].at(0)->);
+
 
 	if (progress == bossTime)
 		gameState = _bossFight;

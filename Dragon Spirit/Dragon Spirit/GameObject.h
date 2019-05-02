@@ -32,7 +32,9 @@ protected:
 	sf::RectangleShape hitbox;
 	sf::Vector2f position;
 	sf::Vector2f velocity;
+
 	sf::Texture texture;
+
 
 
 };
