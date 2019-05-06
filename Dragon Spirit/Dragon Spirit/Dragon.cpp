@@ -12,10 +12,12 @@
 
 Dragon::Dragon(sf::Sprite face, float x, float y, std::shared_ptr<Game> game) : GameObject(face, x, y, game)
 {
-	/*sf::Texture textureTemp;
+	sf::Sprite obj;
+
 	if (!textureTemp.loadFromFile("../flap 1.png"))
 		printf("Errors\n");
-	object.setTexture(textureTemp);*/
+	obj.setTexture(textureTemp); //Breaks
+	object = obj;
 }
 Dragon::~Dragon()
 {
@@ -26,6 +28,13 @@ Dragon::~Dragon()
 // the player has tried to fire a bullet.
 void Dragon::update()
 {
+	sf::Sprite obj;
+
+	if (!textureTemp.loadFromFile("../flap 1.png"))
+		printf("Errors\n");
+	obj.setTexture(textureTemp); //Breaks!
+	object = obj;
+
 	double movementSpeed = 5;
 
 	// Track the keyboard to see what the dragon should do.
@@ -94,8 +103,13 @@ void Dragon::update()
 	position.x += velocity.x;
 	position.y += velocity.y;
 
-	hitbox.move(velocity);
-	object.move(velocity);
+	hitbox.setPosition(position);
+	object.setPosition(position);
+
+	std::cout << object.getPosition().x << "\t";
+	std::cout << object.getPosition().y << std::endl;
+
+	gamePtr->window->draw(object);
 }
 
 

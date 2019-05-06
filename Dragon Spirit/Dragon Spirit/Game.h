@@ -61,20 +61,22 @@ public:
 	std::vector<std::shared_ptr<GameObject>>* getEntities();
 
 	sf::Vector2f viewsize;
-	
-	
+	//TESTING MAKE PRIVATE
+	sf::RenderWindow * window;
 private:
 	enum GameState {
 		_startScreen, _running, _bossFight, _animation,
 		_gameOver, _endScreen
 	};
-	sf::RenderWindow * window;
+	//sf::RenderWindow * window;
 	sf::View view;
 	sf::Event event;
 	std::vector<int> checkpoints;
 
 	//Testing
-	sf::CircleShape shape;
+	//sf::Sprite shape;
+	//sf::CircleShape shape;
+	//sf::Texture testDragon;
 
 	sf::Sprite screen; 
 	sf::Texture screenTexture;
@@ -89,7 +91,7 @@ private:
 	int spawnCounter = 0;
 	int lives = 6;
 	int score = 0;
-	sf::Sprite mapbackround;
+	sf::Sprite mapBackground;
 	sf::Texture maptexture;
 	//AssetManager assetManager;
 	std::vector<std::shared_ptr<GameObject>> groups[OBJNUM_SIZE];

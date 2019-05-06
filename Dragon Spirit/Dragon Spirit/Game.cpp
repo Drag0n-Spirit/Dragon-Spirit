@@ -24,15 +24,36 @@ Game::Game(sf::RenderWindow *_window)
 	view.reset(sf::FloatRect(viewsize.x / 2, 4224.f - viewsize.y / 3, viewsize.x, viewsize.y));
 
 	maptexture.loadFromFile("Stage_1.png");
-	mapbackround.setTexture(maptexture);
-	mapbackround.setTextureRect(sf::IntRect(0, 0, 384, 4424));
-	mapbackround.setPosition(0, 0);
+	mapBackground.setTexture(maptexture);
+	mapBackground.setTextureRect(sf::IntRect(0, 0, 384, 4424));
+	mapBackground.setPosition(0, 0);
 
+	
+	sf::Texture textureTemp; //No
+	sf::Sprite obj;
+
+	if (!textureTemp.loadFromFile("../flap 1.png"))
+		printf("Errors\n");
+	obj.setTexture(textureTemp); //Breaks!
+
+	Dragon * d = new Dragon(obj, 50., 4220., std::shared_ptr<Game>(this));
+
+	groups[dragon].push_back(std::shared_ptr<Dragon>(d));
+	//sf::Sprite face, float x, float y, std::shared_ptr<Game> game
+
+	//shape.setRadius(50.);
+	//shape.setPosition(sf::Vector2f(100., 4000.));
+	
 }
 
 
 Game::~Game()
 {
+	for (int i = 0; i < OBJNUM_SIZE; i++)
+	{
+		for(int j = 0; j < groups[i].size(); j++)
+			delete groups[i].at(j).get();
+	}
 }
 
 
@@ -101,9 +122,17 @@ void Game::startScreen()
 //
 void Game::running()
 {
-	
+	//Draw the background to the window
+	window->draw(mapBackground);
+
+	//For each object, draw it to the window
+	window->setView(view);
+	//Testing
+	//shape.setFillColor(sf::Color::Green);
+	//shape.setRadius(100.f);
+
 	//Iterate through vector array, updating objects
-	for (int i = 0; i < 10; i++)
+	for (int i = 0; i < OBJNUM_SIZE; i++)
 	{
 		for (int j = 0; j < groups[i].size(); j++)
 		{
@@ -126,16 +155,9 @@ void Game::running()
 
 	//Increment progress and scroll level
 	progress++;
-	view.move(0.f, -0.5);
+	view.move(0.f, -0.5f);
 
 	//AssetManager checks for spawns here
-
-
-	//Draw the background to the window
-
-
-	//For each object, draw it to the window
-	window->setView(view);
 
 	for (int i = 0; i < 10; i++)
 	{
@@ -147,18 +169,17 @@ void Game::running()
 	}
 
 	//TESTING
-	shape.setPosition(groups[dragon].at(0)->getPosition());
-	window->draw(shape);
+	//shape.setPosition(groups[dragon].at(0)->getPosition());
+	//window->draw(shape);
+	std::cout << groups[dragon].size() << std::endl;
+	
 
 	//window->draw(groups[dragon].at(0)->object);
 
 	if (progress == bossTime)
 		gameState = _bossFight;	
-		
 	
 	
-
-	window->draw(mapbackround);
 
 	return;
 }
@@ -210,13 +231,7 @@ void Game::animation()
 	area++;
 	gameState = _running;
 
-	
-	
-
 	//std::system("pause");
-
-
-
 
 	return;
 }
@@ -254,10 +269,6 @@ void Game::run()
 	else if (event.type == sf::Event::GainedFocus)
 		isPaused = false;
 	*/
-
-	//Testing
-	shape.setRadius(100.f);
-	shape.setFillColor(sf::Color::Green);
 
 	//If not paused, do something based on the gameState
 	if (!isPaused)

@@ -34,5 +34,8 @@ public:
 private:
 	int hits, heads, fire, hitTimer = 0, shotTimer = 0, fireType = 0;
 
+	//Testing
+	sf::Texture textureTemp;
+
 	std::vector<Power> powerups;
 };
