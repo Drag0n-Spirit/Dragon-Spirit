@@ -4,15 +4,17 @@
 #include <vector>
 #include <fstream>
 
-
 class Animation
 {
 public:
+	//Takes a directory to load textures from.
 	Animation(std::string);
 	~Animation();
 
 	sf::Sprite update();
 private:
-	std::vector<sf::Texture> frames;
+	std::vector<sf::Texture*> frames;
+	//Current frame of Animation.
+	unsigned int n;
 };
 
