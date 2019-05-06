@@ -52,9 +52,9 @@ public:
 	void death();
 	//void spawnEnemy(SpawnData);
 	//void spawnEnemy(GameObject * source);
-	void spawnPowerup(GameObject * source, int type = -1);
-	void spawnProjectile(GameObject * source, //the object that called the function
-		bool air = true, int fireType = 0);
+	//void spawnPowerup(GameObject * source, int type = -1);
+	//void spawnProjectile(GameObject * source, //the object that called the function
+		//bool air = true, int fireType = 0);
 	void checkCollisions();
 
 	sf::Vector2u getScreenDim();

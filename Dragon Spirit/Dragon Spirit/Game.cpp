@@ -383,35 +383,11 @@ std::vector<std::shared_ptr<GameObject>>* Game::getEntities()
 }
 
 
-//
-void Game::spawnPowerup(GameObject * source, int type)
-{
-	//If type is -1, randomly set type.
-
-	//Spawn powerup based on type.
-
-	//Push it into the appropriate vector
-
-	return;
-}
-
-
-
-void Game::spawnProjectile(GameObject * source, bool air, int fireType)
-{
-	//Spawn the projectile dynamically
-
-	//Push it into the appropriate vector
-
-	return;
-}
-
-
 // Function to check collisions between game objects
 void Game::checkCollisions()
 {
 	for (int i = 0; i < *(&groups + 1) - groups; i++)
-	{
+	{ 
 		if (i == dragon) // Dragon to other groups collision.
 		{
 			for (int i = 0; i < groups[dragon].size(); i++)
