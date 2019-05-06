@@ -140,15 +140,9 @@ void Dragon::powerUp(PowerUp * powers)
 	{
 	case DragonHeads:
 		break;
-	case BlueEgg:
-		break;
 	case FirePower:
 		break;
-	case RedEgg:
-		break;
 	case MagicEye:
-		break;
-	case YellowEgg:
 		break;
 	case LongFire:
 		break;
@@ -180,6 +174,7 @@ void Dragon::powerUp(PowerUp * powers)
    to the last checkpoint. */
 void Dragon::die()
 {
+	///Modify this, needs to check hitTimer to see if it needs to die
 	powerDown(); // Powerups that are taken away when the dragon dies
 				 // should now be taken away.
 	if (hits == 0) // A life should be taken away from the dragon.
