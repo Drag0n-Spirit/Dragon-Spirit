@@ -3,11 +3,8 @@
 enum PowerTypes
 {
 	DragonHeads,
-	BlueEgg,
 	FirePower,
-	RedEgg,
 	MagicEye,
-	YellowEgg,
 	LongFire,
 	WideFire,
 	HomingFire,

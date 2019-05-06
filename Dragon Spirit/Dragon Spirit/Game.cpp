@@ -39,11 +39,6 @@ Game::Game(sf::RenderWindow *_window)
 	Dragon * d = new Dragon(obj, 50., 4220., std::shared_ptr<Game>(this));
 
 	groups[dragon].push_back(std::shared_ptr<Dragon>(d));
-	//sf::Sprite face, float x, float y, std::shared_ptr<Game> game
-
-	//shape.setRadius(50.);
-	//shape.setPosition(sf::Vector2f(100., 4000.));
-	
 }
 
 
@@ -73,7 +68,8 @@ template <typename type> std::shared_ptr<type> Game::spawnProjectile(sf::Sprite 
 }
 
 
-/*template <typename type> std::shared_ptr<type> Game::spawnEnemy(sf::Sprite face, sf::Vector2f pos)
+/*
+template <typename type> std::shared_ptr<type> Game::spawnEnemy(sf::Sprite face, sf::Vector2f pos)
 {
 	std::shared_ptr<type> thing(nullptr);
 	std::string name = typeid(type).name();
@@ -85,7 +81,8 @@ template <typename type> std::shared_ptr<type> Game::spawnProjectile(sf::Sprite 
 			groups[i].push_back(thing);
 
 	return thing;
-};*/
+};
+*/
 
 
 //Spawns a Powerup and adds it to groups vector.
@@ -127,9 +124,6 @@ void Game::running()
 
 	//For each object, draw it to the window
 	window->setView(view);
-	//Testing
-	//shape.setFillColor(sf::Color::Green);
-	//shape.setRadius(100.f);
 
 	//Iterate through vector array, updating objects
 	for (int i = 0; i < OBJNUM_SIZE; i++)
@@ -138,6 +132,7 @@ void Game::running()
 		{
 			groups[i].at(j)->update();
 			//AssetManager needs to check the object here
+			//Objects are drawn in their update function
 		}
 	}
 	
