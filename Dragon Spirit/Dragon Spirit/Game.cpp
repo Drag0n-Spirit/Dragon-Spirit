@@ -36,7 +36,7 @@ Game::Game(sf::RenderWindow *_window)
 		printf("Errors\n");
 	obj.setTexture(textureTemp); //Breaks!
 
-	Dragon * d = new Dragon(obj, 50., 4220., std::shared_ptr<Game>(this));
+	Dragon * d = new Dragon(obj, 200., 4220., std::shared_ptr<Game>(this));
 
 	groups[dragon].push_back(std::shared_ptr<Dragon>(d));
 }
