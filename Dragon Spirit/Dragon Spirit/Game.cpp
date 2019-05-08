@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "Game.h"
 #include "Dragon.h"
+#include "ObjectNumber.h"
 
 #include <iostream>
 
@@ -54,6 +55,8 @@ Game::~Game()
 
 //Spawns a Projectile and adds it to groups vector.
 template <typename type> std::shared_ptr<type> Game::spawnProjectile(sf::Sprite face, std::shared_ptr<GameObject> obj)
+// Add a gameObject to the right element in the groups array using it's type.
+void Game::addObject(std::shared_ptr<GameObject> obj)
 {
 	std::shared_ptr<type> thing(nullptr);
 	std::string name = typeid(type).name();
@@ -65,6 +68,7 @@ template <typename type> std::shared_ptr<type> Game::spawnProjectile(sf::Sprite 
 			groups[i].push_back(thing);
 
 	return thing;
+	groups[obj->type].push_back(obj);
 }
 
 
@@ -425,6 +429,7 @@ void Game::checkCollisions()
 {
 	for (int i = 0; i < *(&groups + 1) - groups; i++)
 	{
+	{ 
 		if (i == dragon) // Dragon to other groups collision.
 		{
 			for (int i = 0; i < groups[dragon].size(); i++)

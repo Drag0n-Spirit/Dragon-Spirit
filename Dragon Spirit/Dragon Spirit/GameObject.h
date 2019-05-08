@@ -1,6 +1,7 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include <math.h>
+#include "ObjectNumber.h"
 //#include "Game.h"
 
 class Game;
@@ -21,6 +22,8 @@ public:
 	sf::Vector2f getPosition();
 
 	int getHealth();
+
+	int type = gameObject;
 
 protected:
 	std::shared_ptr<Game> gamePtr;

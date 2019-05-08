@@ -11,8 +11,11 @@ public:
 	virtual int getHit();
 	int getType();
 	bool isHittable();
+
+	int type = gameObject;
+
 private:
-	int hp, type, pointVal = 0;
+	int hp, pointVal = 0;
 	bool shiny, hittable;
 };
 

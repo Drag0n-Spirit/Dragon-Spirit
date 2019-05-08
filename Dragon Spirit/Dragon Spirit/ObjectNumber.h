@@ -6,7 +6,8 @@
    being put in the right element. */
 enum ObjectNumber
 {
-	dragon = 0,
+	gameObject = 0,
+	dragon,
 	powerup,
 	enemyProjectile,
 	airEnemy,
@@ -14,6 +15,7 @@ enum ObjectNumber
 	dormant,
 	dragonFire, 
 	dragonBomb,
-	Effects,
-	Terrain
+	effects,
+	terrain,
+	OBJNUM_SIZE
 };

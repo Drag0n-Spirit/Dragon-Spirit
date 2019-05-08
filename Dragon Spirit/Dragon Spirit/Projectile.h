@@ -1,6 +1,7 @@
 #pragma once
 #include "GameObject.h"
 #include "Dragon.h"
+#include "ObjectNumber.h"
 
 
 class Projectile :
@@ -13,6 +14,7 @@ public:
 
 	int getDamage();
 
+	int type = enemyProjectile;
 private:
 	int damage = 1;
 };

@@ -5,6 +5,7 @@
 #include "GameObject.h"
 #include "Powerup.h"
 #include "PowerTypes.h"
+#include "ObjectNumber.h"
 
 struct Power
 {
@@ -30,6 +31,8 @@ public:
 	// Getters
 	int getHits();
 	int getFire();
+
+	int type = dragon;
 
 private:
 	int hits, heads, fire, hitTimer = 0, shotTimer = 0, fireType = 0;
