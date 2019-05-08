@@ -2,6 +2,7 @@
 #include "GameObject.h"
 #include "PowerTypes.h"
 #include <SFML/Graphics.hpp>
+#include "ObjectNumber.h"
 
 class PowerUp : public GameObject
 {
@@ -17,6 +18,9 @@ public:
 	void update();
 
 	int getValue();
+
+	int type = powerup;
+
 private:
 	int time;
 

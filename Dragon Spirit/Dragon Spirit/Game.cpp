@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "Game.h"
 #include "Dragon.h"
+#include "ObjectNumber.h"
 
 #include <iostream>
 
@@ -26,51 +27,11 @@ Game::~Game()
 }
 
 
-//Spawns a Projectile and adds it to groups vector.
-template <typename type> std::shared_ptr<type> Game::spawnProjectile(sf::Sprite face, std::shared_ptr<GameObject> obj)
+// Add a gameObject to the right element in the groups array using it's type.
+void Game::addObject(std::shared_ptr<GameObject> obj)
 {
-	std::shared_ptr<type> thing(nullptr);
-	std::string name = typeid(type).name();
-
-	thing = std::make_shared<type>(face, this);
-
-	for (int i = 0; i < OBJNUM_SIZE; i++)
-		if (i == name)
-			groups[i].push_back(thing, groups[dragon]->at(0));
-
-	return thing;
+	groups[obj->type].push_back(obj);
 }
-
-
-/*template <typename type> std::shared_ptr<type> Game::spawnEnemy(sf::Sprite face, sf::Vector2f pos)
-{
-	std::shared_ptr<type> thing(nullptr);
-	std::string name = typeid(type).name();
-
-	thing = std::make_shared<type>(face, pos, this, rand() % POWERTYPES_SIZE);
-
-	for (int i = 0; i < OBJNUM_SIZE; i++)
-		if (i == name)
-			groups[i].push_back(thing);
-
-	return thing;
-};*/
-
-
-//Spawns a Powerup and adds it to groups vector.
-template <typename type> std::shared_ptr<type> Game::spawnPowerup(sf::Sprite face, sf::Vector2f pos)
-{
-	std::shared_ptr<type> thing(nullptr);
-	std::string name = typeid(type).name();
-
-	thing = std::make_shared<type>(face, pos, this, rand() % POWERTYPES_SIZE);
-
-	for (int i = 0; i < OBJNUM_SIZE; i++)
-		if (i == name)
-			groups[i].push_back(thing);
-
-	return thing;
-};
 
 
 //Show the start screen and advance to the appropriate animation when 1 is

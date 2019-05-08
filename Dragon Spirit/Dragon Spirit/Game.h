@@ -7,26 +7,14 @@
 #include "PowerUp.h"
 #include "Projectile.h"
 #include <iostream>
+#include "ObjectNumber.h"
 
 class GameObject;
 
 class Game
 {
 public:
-	enum objNum
-	{
-		dragon = 0,
-		powerup,
-		enemyProjectile,
-		airEnemy,
-		groundEnemy,
-		dormant,
-		dragonFire,
-		dragonBomb,
-		effects, 
-		terrain,
-		OBJNUM_SIZE
-	};
+
 	Game(sf::RenderWindow *_window);
 	~Game();
 
@@ -50,12 +38,8 @@ public:
 	void checkForSpawns();
 	void gainLife();
 	void death();
-	//void spawnEnemy(SpawnData);
-	//void spawnEnemy(GameObject * source);
-	//void spawnPowerup(GameObject * source, int type = -1);
-	//void spawnProjectile(GameObject * source, //the object that called the function
-		//bool air = true, int fireType = 0);
 	void checkCollisions();
+	void addObject(std::shared_ptr<GameObject> obj);
 
 	sf::Vector2u getScreenDim();
 	std::vector<std::shared_ptr<GameObject>>* getEntities();
