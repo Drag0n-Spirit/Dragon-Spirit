@@ -104,6 +104,7 @@ void Dragon::update()
 	std::cout << object.getPosition().x << "\t";
 	std::cout << object.getPosition().y << std::endl;
 
+	///Draw this to the view, not the window
 	gamePtr->window->draw(object);
 }
 
