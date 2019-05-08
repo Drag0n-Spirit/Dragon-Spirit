@@ -111,7 +111,6 @@ void Game::startScreen()
 	window->draw(screen);
 
 
-
 	return;
 }
 
@@ -224,9 +223,8 @@ void Game::bossFight()
 void Game::animation()
 {
 	area++;
-	gameState = _running;
 
-	//std::system("pause");
+	gameState = _running;
 
 	return;
 }
@@ -238,6 +236,7 @@ void Game::gameOver()
 	//Display scores
 
 	//Advance to startScreen
+	gameState = _startScreen;
 
 	return;
 }
@@ -249,21 +248,15 @@ void Game::endScreen()
 	//Display victory screens
 
 	//Advance to startScreen
+	gameState = _startScreen;
 
 	return;
 }
 
 
-//Handles pausing if game is in background, and calls functions based on gameState
+//Calls functions based on gameState
 void Game::run()
 {
-	/*
-	//Pause/unpause - not working
-	if (event.type == sf::Event::LostFocus)
-		isPaused = true;
-	else if (event.type == sf::Event::GainedFocus)
-		isPaused = false;
-	*/
 
 	//If not paused, do something based on the gameState
 	if (!isPaused)
@@ -346,6 +339,8 @@ void Game::addScore(unsigned int scoreBonus)
 	return;
 }
 
+
+//
 void Game::checkForSpawns()
 {
 	//Compare progress to AssetManager's vector.
