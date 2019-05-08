@@ -15,6 +15,7 @@ public:
 	int getDamage();
 
 	int type = enemyProjectile;
+
 private:
 	int damage = 1;
 };

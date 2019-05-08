@@ -4,6 +4,7 @@
 #include "SFML/Graphics.hpp"
 #include "GameObject.h"
 #include "Projectile.h"
+//#include "PowerUp.h"
 #include "Enemy.h"
 #include "PowerTypes.h"
 #include "Game.h"
@@ -11,13 +12,6 @@
 
 Dragon::Dragon(sf::Sprite face, float x, float y, std::shared_ptr<Game> game) : GameObject(face, x, y, game)
 {
-	sf::Sprite obj;
-
-	if (!textureTemp.loadFromFile("../Dragon1.png"))
-		printf("Errors\n");
-	obj.setTexture(textureTemp); //Breaks
-	object = obj;
-
 	//object.setScale(0.3, 0.3);
 	sf::Texture textureTemp;
 	if (!textureTemp.loadFromFile("../flap 1.png"))
@@ -80,8 +74,6 @@ void Dragon::update()
 	if ((sf::Keyboard::isKeyPressed(sf::Keyboard::LControl) 
 		|| sf::Keyboard::isKeyPressed(sf::Keyboard::RControl)) && shotTimer == 0)
 	{
-		GameObject * obj = this;
-		//gamePtr->spawnProjectile<Projectile>(object, std::shared_ptr<GameObject>(obj));
 		gamePtr->addObject(std::shared_ptr<GameObject>(new Projectile(object, gamePtr, std::shared_ptr<GameObject>(this))));
 		shotTimer = 15;
 	}
